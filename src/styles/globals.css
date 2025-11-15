@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --main-bg: #E4EDF6;
+  --main-text: #7B8CAA;
+  --alt-text: #B3B9C5;
+  --shadow-light: #edf6ff;
+  --shadow-dark: #d2dbe2;
+  --hover-color: #0092b8;
+  --navbar-active-route: #00b8db;
+}
+
+.dark {
+  --main-bg: #22343C;
+  --main-text: #dedede;
+  --alt-text: #A0A5A9;
+  --shadow-light: #263b43;
+  --shadow-dark: #1c2a31;
+  --hover-color: #00786f;
+  --navbar-active-route: #00bba7;
+}
+
+body {
+  /* font-family: var(--main-font); */
+  background-color: var(--main-bg);
+  user-select: none;
+  color: var(--main-text);
+  font-size: 14px;
+}
+
+.rtl {
+  direction: rtl;
+}
+
+.ltr{
+  direction: ltr;
+}
+
+.neu__norm {
+  /* background: #E4EDF6; */
+  box-shadow: 2px 2px 7px var(--shadow-dark),
+    -4px -4px 5px var(--shadow-light);
+}
+
+.neu__inner {
+  /* background: #E4EDF6; */
+  box-shadow: inset 2px 2px 7px var(--shadow-dark),
+    inset -4px -4px 5px var(--shadow-light);
+}
+
+input {
+  outline: none;
+  background: none;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hoverEffect {
+  transition: all 500ms ease-in-out;
+}
+
+.hoverEffect:hover {
+  background-color: #009689;
+  color: whitesmoke;
+  padding: 20px 40px;
+}
+
+.drop::after {
+  content: '';
+  width: 1px;
+  height: 999px;
+  position: absolute;
+  background: var(--hover-color);
+  top: -99px;
+  inset-inline-start: -10px;
+}
+
+.drop::before {
+  content: '';
+  width: 10px;
+  height: 1px;
+  position: absolute;
+  background: var(--hover-color);
+  top: 50%;
+  inset-inline-start: -9px;
+}
+
+.simplebar-scrollbar:before {
+  background: rgb(122, 122, 122);
+  border-radius: 10px;
+}
+
+.simplebar-track.simplebar-vertical {
+  width: 8px;
+}
+
+.react-resizable-handle.react-resizable-handle-se {
+  opacity: 0;
+}

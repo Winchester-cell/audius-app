@@ -1,0 +1,28 @@
+import { BsFillChatFill } from "react-icons/bs"; 
+import { BsFillBellFill } from "react-icons/bs";
+import { useTranslation } from "react-i18next";
+import { FaStethoscope } from "react-icons/fa";
+import Clock from "../Clock/Clock";
+
+export default function Header() {
+
+  const { t } = useTranslation()
+
+  return (
+    <div className="w-full p-5">
+      <div className="w-full h-[60px] neu__norm rounded-full flex items-center justify-between ps-10 pe-4">
+        {/* logo */}
+        <div className="font-bold flex gap-1 items-center">
+          <FaStethoscope className="w-6 h-6 text-blue-500" />
+          <span className="text-2xl text-teal-600">{t('login.title')}</span>
+        </div>
+        {/* Clock & bell */}
+        <div className="flex items-center gap-5">
+          <BsFillBellFill className="w-5 h-5 transition-all duration-500 hover:text-(--hover-color) cursor-pointer hover:scale-[1.2]" />
+          <BsFillChatFill className="w-5 h-5 transition-all duration-500 hover:text-(--hover-color) cursor-pointer hover:scale-[1.2]" />
+          <Clock />
+        </div>
+      </div>
+    </div>
+  )
+}
