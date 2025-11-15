@@ -17,6 +17,7 @@ const MainLayout: FC<PropsWithChildren> = ({ children }) => {
 
     return (
         <div className={`${i18n.language === 'fa' ? 'rtl font-(--main-persian)' : 'font-(--main-font)'}`}>
+            <SideBar />
             <div className={`${openClass} transition-all duration-500 overflow-hidden`}>
                 <Header />
                 {children}

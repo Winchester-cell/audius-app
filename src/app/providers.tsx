@@ -18,7 +18,6 @@ const Providers: FC<PropsWithChildren> = ({ children }) => {
     return (
         <>
             <ThemeProvider attribute="class" defaultTheme="light">
-                <SideBar />
                 <MainLayout>
                     {children}
                 </MainLayout>
