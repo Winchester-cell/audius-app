@@ -10,7 +10,7 @@ const LoginPage = () => {
 
     return (
         <div className={`w-dvw h-dvh flex flex-col gap-5 items-center justify-center relative ${i18n.language === 'fa' ? 'rtl' : ''}`}>
-            <div className="absolute top-10 left-10">
+            <div className="absolute top-5 lg:top-10 left-5 lg:left-10">
                 <ControlSection />
             </div>
             <LoginForm />

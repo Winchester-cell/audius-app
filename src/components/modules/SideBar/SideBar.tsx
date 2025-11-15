@@ -2,22 +2,33 @@
 import NavigateSection from "./NavigateSection"
 import ProfileSection from "./ProfileSection"
 import ControlSection from "./ControlSection";
-import SidbarCollapse from "../Controls/SidbarCollapse";
+import SidbarCollapse from "../Controls/SidebarCollapse";
 import { useSideBarStore } from "@/stores/sideBarStore";
+import SidebarClose from "../Controls/SideBarClose";
 
 const SideBar = () => {
 
-    const {isSideBarCollapse} = useSideBarStore()
+    const { isSideBarCollapse, isSideBarOpen, setSideBarOpen } = useSideBarStore()
 
     return (
-        <div className={`fixed z-50 top-0 start-0 ${isSideBarCollapse ? 'w-[100px]' : 'w-[300px]'} h-dvh neu__norm transition-all duration-500`}>
-            <div className={`flex flex-col gap-5 ${isSideBarCollapse ? 'py-5 px-2' : 'p-5'} h-full`}>
-                <SidbarCollapse />
-                <ProfileSection />
-                <NavigateSection />
-                <ControlSection />
+        <>
+            <div className={`fixed bg-(--main-bg) z-50 top-0 start-0 ${isSideBarCollapse ? 'w-[100px]' : 'w-[300px]'} ${isSideBarOpen ? '' : '-translate-x-full'} h-dvh neu__norm transition-all duration-500`}>
+                <div className={`flex flex-col gap-5 ${isSideBarCollapse ? 'py-5 px-2' : 'p-5'} h-full`}>
+                    <div className={`flex gap-3 ${isSideBarCollapse ? 'justify-center' : 'justify-end'}`}>
+                        <SidbarCollapse />
+                        <SidebarClose />
+                    </div>
+                    <ProfileSection />
+                    <NavigateSection />
+                    <ControlSection />
+                </div>
             </div>
-        </div>
+            {/* mobile overlay */}
+            {
+                isSideBarOpen &&
+                <div onClick={() => setSideBarOpen(false)} className="w-dvw h-dvh backdrop-blur-md fixed z-40 lg:hidden" />
+            }
+        </>
     )
 }
 
