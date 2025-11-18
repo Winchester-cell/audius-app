@@ -26,10 +26,10 @@ const Clock: React.FC = () => {
     }).format(now)
 
     return (
-        <div className="flex items-center gap-2  py-2 px-5 rounded-full bg-(--hover-color) text-white  shadow-inner">
-            <div className="text-[10px] font-bold">{time}</div>
-            <div className="text-[10px]">{weekday}</div>
-            <div className="text-[10px]">{date}</div>
+        <div className="flex items-center gap-2  py-[7px] px-5 rounded-full bg-(--hover-color) text-white  shadow-inner">
+            <div className="text-[9px] font-bold">{time}</div>
+            <div className="text-[9px]">{weekday}</div>
+            <div className="text-[9px]">{date}</div>
         </div>
     )
 

@@ -4,7 +4,7 @@ import SidbarDropDown from "./SidbarDropDown";
 import SimpleBar from "simplebar-react";
 const NavigateSection = () => {
     return (
-        <div className=" w-full neu__inner rounded-3xl p-1 flex flex-col gap-5 overflow-hidden">
+        <div className=" w-full neu__inner rounded-3xl p-1 flex flex-col gap-5 overflow-hidden grow">
             <SimpleBar className="h-full p-4">
                 {
                     sideBarContent.map((field, index) => {

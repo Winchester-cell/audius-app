@@ -1,8 +1,8 @@
-import { BsRobot } from "react-icons/bs";
+import { BiDevices } from "react-icons/bi";
 import { FaUsers } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
-import { MdOutlineMonitor } from "react-icons/md";
-import { MdDashboard } from "react-icons/md";
+import { MdDashboard, MdEventAvailable, MdOutlineMonitor } from "react-icons/md";
+import { RiStethoscopeFill } from "react-icons/ri";
 
 export type SingleItemType = {
     type: "single-item";
@@ -31,14 +31,31 @@ const sideBarContent: Fields[] = [
                 type: "single-item",
                 href: "/",
                 text: "sidebar.dashboard",
-
                 icon: MdDashboard,
             },
-            {
+                {
                 type: "single-item",
                 href: "#",
                 text: "sidebar.patients",
                 icon: FaUsers
+            },
+            {
+                type: "single-item",
+                href: "#",
+                text: "sidebar.sessions",
+                icon: RiStethoscopeFill,
+            },
+            {
+                type: "single-item",
+                href: "#",
+                text: "sidebar.appointments",
+                icon: MdEventAvailable,
+            },
+            {
+                type: "single-item",
+                href: "#",
+                text: "sidebar.devices",
+                icon: BiDevices,
             },
             {
                 type: "single-item",
@@ -51,64 +68,6 @@ const sideBarContent: Fields[] = [
                 href: "#",
                 text: "sidebar.settings",
                 icon: IoSettingsSharp
-            },
-            {
-                type: 'dropdown',
-                icon: MdDashboard,
-                text: 'Test Drop',
-                options: [
-                    { type: 'single-item', href: '#', icon: IoSettingsSharp, text: 'Settings' },
-                    { type: 'single-item', href: '#', icon: BsRobot, text: 'Test Option' },
-                    { type: 'single-item', href: '#', icon: IoSettingsSharp, text: 'Settings' },
-                    { type: 'single-item', href: '#', icon: BsRobot, text: 'Test Option' },
-                ]
-            },
-            {
-                type: "single-item",
-                href: "#",
-                text: "sidebar.aiCenter",
-                icon: BsRobot
-            },
-            // cloned
-            {
-                type: "single-item",
-                href: "#",
-                text: "sidebar.dashboard",
-
-                icon: MdDashboard,
-            },
-            {
-                type: "single-item",
-                href: "#",
-                text: "sidebar.patients",
-                icon: FaUsers
-            },
-            {
-                type: "single-item",
-                href: "#",
-                text: "sidebar.reports",
-                icon: MdOutlineMonitor
-            },
-            {
-                type: "single-item",
-                href: "#",
-                text: "sidebar.settings",
-                icon: IoSettingsSharp
-            },
-            {
-                type: 'dropdown',
-                icon: MdDashboard,
-                text: 'Test Drop',
-                options: [
-                    { type: 'single-item', href: '#', icon: IoSettingsSharp, text: 'Settings' },
-                    { type: 'single-item', href: '#', icon: BsRobot, text: 'Test Option' },
-                ]
-            },
-            {
-                type: "single-item",
-                href: "#",
-                text: "sidebar.aiCenter",
-                icon: BsRobot
             },
         ],
     },

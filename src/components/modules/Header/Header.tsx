@@ -10,16 +10,16 @@ export default function Header() {
 
   return (
     <div className="w-full">
-      <div className="w-full h-[60px] neu__norm rounded-full flex items-center justify-between ps-10 pe-4">
+      <div className="w-full h-[55px] neu__norm rounded-full flex items-center justify-between ps-10 pe-4">
         {/* logo */}
         <div className="font-bold flex gap-1 items-center">
-          <FaStethoscope className="w-6 h-6 text-blue-500" />
-          <span className="text-2xl text-teal-600">{t('login.title')}</span>
+          <FaStethoscope className="w-4 h-4 text-blue-500" />
+          <span className="text-[20px] text-teal-600">{t('login.title')}</span>
         </div>
         {/* Clock & bell */}
         <div className="lg:flex hidden items-center gap-5">
-          <BsFillBellFill className="w-5 h-5 transition-all duration-500 hover:text-(--hover-color) cursor-pointer hover:scale-[1.2]" />
-          <BsFillChatFill className="w-5 h-5 transition-all duration-500 hover:text-(--hover-color) cursor-pointer hover:scale-[1.2]" />
+          <BsFillBellFill className="w-4 h-4 transition-all duration-500 hover:text-(--hover-color) cursor-pointer hover:scale-[1.2]" />
+          <BsFillChatFill className="w-4 h-4 transition-all duration-500 hover:text-(--hover-color) cursor-pointer hover:scale-[1.2]" />
           <Clock />
         </div>
       </div>

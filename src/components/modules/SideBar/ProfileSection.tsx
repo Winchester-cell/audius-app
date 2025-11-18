@@ -17,12 +17,12 @@ const ProfileSection = () => {
                 <>
                     {/* Avatar */}
                     <div className="p-4 neu__norm w-fit rounded-full">
-                        <FaUserMd className="w-8 h-8" />
+                        <FaUserMd className="w-5 h-5" />
                     </div>
                     {/* Info */}
                     <div className="grow">
-                        <h2 className="text-[18px] font-semibold">Sara Ahmadi</h2>
-                        <span className="text-[14px] text-(--alt-text)">Doctor</span>
+                        <h2 className="text-[14px] font-semibold">Sara Ahmadi</h2>
+                        <span className="text-[12px] text-(--alt-text)">Doctor</span>
                     </div>
                 </>
             }
