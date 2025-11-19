@@ -5,14 +5,18 @@ interface TextInputProps<T> {
     place: string,
     icon: React.ElementType,
     registerKey?: keyof T,
-    register?: UseFormRegister<any>
+    register?: UseFormRegister<any>,
+    py?: string,
+    iconW?: string,
+    iconH?: string,
+    width?: string,
 }
 
-const TextInput = <T,>({ place, icon: Icon, inputID, register, registerKey }: TextInputProps<T>) => {
+const TextInput = <T,>({ place, icon: Icon, inputID, register, registerKey, width = 'w-full', py = 'py-4', iconW = 'w-5', iconH = 'h-5' }: TextInputProps<T>) => {
     return (
-        <div className="w-full neu__inner py-4 px-5 rounded-full flex gap-3">
+        <div className={`${width} neu__inner ${py} px-5 rounded-full flex gap-3`}>
             <label htmlFor={inputID} className="cursor-pointer">
-                <Icon className="w-5 h-5" />
+                <Icon className={`${iconW} ${iconH}`} />
             </label>
             <input {...((register && registerKey) ? register(registerKey.toString()) : {})} id={inputID} type="text" className="block grow" placeholder={place} />
         </div>

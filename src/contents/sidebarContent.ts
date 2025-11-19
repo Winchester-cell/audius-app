@@ -33,11 +33,17 @@ const sideBarContent: Fields[] = [
                 text: "sidebar.dashboard",
                 icon: MdDashboard,
             },
-                {
+            {
                 type: "single-item",
-                href: "#",
+                href: "/patients",
                 text: "sidebar.patients",
                 icon: FaUsers
+            },
+            {
+                type: "single-item",
+                href: "/devices",
+                text: "sidebar.devices",
+                icon: BiDevices,
             },
             {
                 type: "single-item",
@@ -50,12 +56,6 @@ const sideBarContent: Fields[] = [
                 href: "#",
                 text: "sidebar.appointments",
                 icon: MdEventAvailable,
-            },
-            {
-                type: "single-item",
-                href: "#",
-                text: "sidebar.devices",
-                icon: BiDevices,
             },
             {
                 type: "single-item",

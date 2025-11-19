@@ -17,7 +17,7 @@ export default function Header() {
           <span className="text-[20px] text-teal-600">{t('login.title')}</span>
         </div>
         {/* Clock & bell */}
-        <div className="lg:flex hidden items-center gap-5">
+        <div className="flex items-center gap-5">
           <BsFillBellFill className="w-4 h-4 transition-all duration-500 hover:text-(--hover-color) cursor-pointer hover:scale-[1.2]" />
           <BsFillChatFill className="w-4 h-4 transition-all duration-500 hover:text-(--hover-color) cursor-pointer hover:scale-[1.2]" />
           <Clock />

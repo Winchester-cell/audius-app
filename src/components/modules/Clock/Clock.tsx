@@ -26,7 +26,7 @@ const Clock: React.FC = () => {
     }).format(now)
 
     return (
-        <div className="flex items-center gap-2  py-[7px] px-5 rounded-full bg-(--hover-color) text-white  shadow-inner">
+        <div className="hidden lg:flex items-center gap-2  py-[7px] px-5 rounded-full bg-(--hover-color) text-white  shadow-inner">
             <div className="text-[9px] font-bold">{time}</div>
             <div className="text-[9px]">{weekday}</div>
             <div className="text-[9px]">{date}</div>

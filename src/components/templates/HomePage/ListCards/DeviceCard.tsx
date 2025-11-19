@@ -3,8 +3,8 @@ const DeviceCard = ({ code, service, status, lastActive }: any) => {
     return (
         <div className="neu__norm ps-5 pe-7 py-2 rounded-full w-full flex items-center justify-between">
             <div className="flex items-center gap-3">
-                <div className="neu__norm rounded-full p-2">
-                    <BiDevices className="w-7 h-7" />
+                <div className="neu__inner rounded-full p-2 lg:p-3">
+                    <BiDevices className="lg:w-7 lg:h-7 w-5 h-5" />
                 </div>
                 <div className="text-[10px]">
                     <div className="font-semibold ">{code}</div>

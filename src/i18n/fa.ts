@@ -26,6 +26,8 @@ export const fa = {
         activeDevices: "دستگاه‌های فعال",
         todaysSessions: "جلسات امروز",
         pendingAppointments: "وقت‌های معلق",
+        latestSessions: 'جلسات درمان اخیر',
+        clinicsDevicesStatus: `وضعیت دستگاه‌های کلینیک`,
     },
     // sidebar 
     sidebar: {

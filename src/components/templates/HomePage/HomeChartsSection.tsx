@@ -18,18 +18,18 @@ const HomeChartsSection: FC = () => {
     ]
 
     return (
-        <div className='flex items-stretch flex-row gap-5'>
+        <div className='flex flex-col items-stretch lg:flex-row gap-5'>
             {/* barchart box */}
-            <div className='w-[70%] p-5 neu__norm rounded-3xl'>
-                <BarChart categories={categories} series={series} colors={['#008ffb']} distributed={false} title={t('mainDashboard.weeklyAppointments')} maxY={20} />
+            <div className='lg:w-[70%] w-full p-5 neu__norm rounded-3xl h-[280px] lg:h-[400px] hover:scale-[1.02] transition-transform duration-700'>
+                <BarChart categories={categories} series={series} colors={['#00b8db']} distributed={false} title={t('mainDashboard.weeklyAppointments')} maxY={20} />
             </div>
             {/* radialchart box */}
-            <div className='w-[30%] p-5 neu__norm rounded-3xl flex flex-col h-[400px]'>
+            <div className='lg:w-[30%] w-full p-5 neu__norm rounded-3xl flex flex-col h-[400px] hover:scale-[1.02] transition-transform duration-700'>
                 {/* title */}
                 <div className='w-full text-center font-semibold text-[16px]'>{t('mainDashboard.devicesUsage')}</div>
                 {/* chart */}
-                <div className='w-full h-[60%] -mt-3'>
-                    <RadialChart hollowSize='50%' percent={70} colors={['oklch(70.4% 0.14 182.503)']} />
+                <div className='w-full h-[60%] text-teal-600 -mt-3'>
+                    <RadialChart hollowSize='50%' percent={70} colors={['oklch(60% 0.118 184.704)']} />
                 </div>
                 {/* info */}
                 <div className='grow flex flex-col gap-4 neu__inner rounded-3xl p-4 font-semibold'>

@@ -26,6 +26,8 @@ export const en = {
         activeDevices: "Active devices",
         todaysSessions: "Today's Sessions",
         pendingAppointments: "Pending Appointments",
+        latestSessions: 'Latest sessions',
+        clinicsDevicesStatus: `Clinic's devices status`,
     },
     // sidebar 
     sidebar: {
