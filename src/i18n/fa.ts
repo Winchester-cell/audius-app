@@ -20,7 +20,12 @@ export const fa = {
         totalPatients: 'کل بیماران',
         insystem: 'در سیستم',
         monthlyIncome: 'درآمد ماهیانه',
-        toman: 'تومان'
+        toman: 'تومان',
+        weeklyAppointments: 'جلسات هفتگی',
+        devicesUsage: "استفاده دستگاه‌ها",
+        activeDevices: "دستگاه‌های فعال",
+        todaysSessions: "جلسات امروز",
+        pendingAppointments: "وقت‌های معلق",
     },
     // sidebar 
     sidebar: {
@@ -35,5 +40,14 @@ export const fa = {
     // common words
     common: {
         password: 'رمز عبور',
+        days: {
+            sunday: 'یکشنبه',
+            monday: 'دوشنبه',
+            tuesday: 'سه‌شنبه',
+            wednesday: 'چهارشنبه',
+            thursday: 'پنجشنبه',
+            friday: 'جمعه',
+            saturday: 'شنبه',
+        }
     }
 }

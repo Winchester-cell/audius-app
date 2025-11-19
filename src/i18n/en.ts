@@ -14,13 +14,18 @@ export const en = {
         newPatient: 'New patients',
         thisWeak: 'This weak',
         appointments: 'Appointments',
-        today:'Today',
-        completed:'Completed',
-        canceled:'Canceled',
-        totalPatients:'Total patients',
-        insystem:'In System',
-        monthlyIncome:'Monthly income',
-        toman:'Toman'
+        today: 'Today',
+        completed: 'Completed',
+        canceled: 'Canceled',
+        totalPatients: 'Total patients',
+        insystem: 'In System',
+        monthlyIncome: 'Monthly income',
+        toman: 'Toman',
+        weeklyAppointments: 'Weekly Appointments',
+        devicesUsage: "Devices usage",
+        activeDevices: "Active devices",
+        todaysSessions: "Today's Sessions",
+        pendingAppointments: "Pending Appointments",
     },
     // sidebar 
     sidebar: {
@@ -35,5 +40,14 @@ export const en = {
     // common words
     common: {
         password: 'Password',
+        days: {
+            sunday: 'Sunday',
+            monday: 'Monday',
+            tuesday: 'Tuesday',
+            wednesday: 'Wednesday',
+            thursday: 'Thursday',
+            friday: 'Friday',
+            saturday: 'Saturday',
+        }
     }
 }

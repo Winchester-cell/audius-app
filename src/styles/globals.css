@@ -106,3 +106,8 @@ button {
 .react-resizable-handle.react-resizable-handle-se {
   opacity: 0;
 }
+
+.apexcharts-tooltip {
+  background: var(--main-bg) !important;
+  color: var(--main-text);
+}
