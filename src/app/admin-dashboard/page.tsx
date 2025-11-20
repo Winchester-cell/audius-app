@@ -1,4 +1,3 @@
-import React from 'react'
 import { RxUpdate } from "react-icons/rx";
 import { BiClinic } from "react-icons/bi";
 import { TbDeviceDesktop } from "react-icons/tb";
@@ -6,8 +5,6 @@ import { VscGoToEditingSession } from "react-icons/vsc";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import { CgSoftwareDownload } from "react-icons/cg";
 import { IoWarningOutline } from "react-icons/io5";
-
-
 
 export default function DashboardAdmin() {
     const summaryCards = [
@@ -106,10 +103,10 @@ export default function DashboardAdmin() {
 
   return (
     <div className='px-5'>
-        <div className='flex justify-between pb-5 p-2'>
+        <div className='flex justify-between pb-5 p-5 neu__norm mb-5 rounded-2xl'>
             <div>
-                <p className='font-bold text-xl mb-1'>Mangament Dashboard</p>
-                <p>System Overview</p>
+                <p className='font-bold text-[14px] lg:text-xl mb-1'>Mangament Dashboard</p>
+                <p className="text-[10px]">System Overview</p>
             </div>
             <div className='neu__norm flex items-center justify-center gap-2 px-6 py-1 rounded-xl'>
                 <RxUpdate />
@@ -117,7 +114,7 @@ export default function DashboardAdmin() {
             </div>
         </div>
 
-        <div className='grid grid-cols-4 gap-4'> 
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4'> 
             {
                 summaryCards.map((card) => {
                     return(
@@ -153,7 +150,7 @@ export default function DashboardAdmin() {
             }
         </div>
 
-        <div className='grid grid-cols-2 gap-4 mt-5 mb-10'>
+        <div className='grid grid-cols-1  xl:grid-cols-2 gap-4 mt-5 mb-10'>
             {/* The Best Clinics Section */}
             <div className='neu__norm rounded-xl p-5 flex flex-col gap-5'>
                 <div className='flex justify-between'>

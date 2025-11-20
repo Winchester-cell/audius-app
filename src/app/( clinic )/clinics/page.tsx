@@ -94,7 +94,7 @@ export default function Clinics() {
             </div>
         </div>
         {/* Total Clinics Managment Number */}
-        <div className='grid grid-cols-4 gap-5 pb-5'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5 pb-5'>
             {clinicManagement.map((clinic) => {
                 return(
                     <div key={clinic.id} className='neu__norm rounded-2xl px-4 py-4'>

@@ -38,6 +38,8 @@ export const en = {
         devices: 'Devices',
         reports: 'Reports',
         settings: 'Settings',
+        clinics: 'Clinics',
+        adminDashboard: 'Admin Dashboard',
     },
     // common words
     common: {

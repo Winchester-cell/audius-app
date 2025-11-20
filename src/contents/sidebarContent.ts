@@ -1,4 +1,5 @@
 import { BiDevices } from "react-icons/bi";
+import { BsFillBuildingFill } from "react-icons/bs";
 import { FaUsers } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { MdDashboard, MdEventAvailable, MdOutlineMonitor } from "react-icons/md";
@@ -44,6 +45,18 @@ const sideBarContent: Fields[] = [
                 href: "/devices",
                 text: "sidebar.devices",
                 icon: BiDevices,
+            },
+            {
+                type: "single-item",
+                href: "/clinics",
+                text: "sidebar.clinics",
+                icon: BsFillBuildingFill,
+            },
+            {
+                type: "single-item",
+                href: "/admin-dashboard",
+                text: "sidebar.adminDashboard",
+                icon: MdDashboard,
             },
             {
                 type: "single-item",

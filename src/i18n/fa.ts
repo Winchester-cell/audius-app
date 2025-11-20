@@ -38,6 +38,8 @@ export const fa = {
         devices: 'دستگاه‌ها',
         reports: 'گزارشات',
         settings: 'تنظیمات',
+        clinics: 'کلینیک‌ها',
+        adminDashboard: 'داشبور ادمین',
     },
     // common words
     common: {
