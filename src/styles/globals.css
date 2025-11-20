@@ -11,6 +11,10 @@
   --greens: #00bba7;
   --reds: #ff637e;
   --blues: #51a2ff;
+  --box: #77c292;
+  --device: #ae91c9;
+  --device-border-color: #b364ca;
+  --num-color: #2828ae47;
 }
 
 .dark {
@@ -24,6 +28,10 @@
   --greens: #009689;
   --reds: #ff2056;
   --blues: #2b7fff;
+  --box: #1f5030;
+  --device: #5d4a70;
+  --device-border-color: #b364ca;
+  --num-color: #4d4d8da3;
 }
 
 body {
