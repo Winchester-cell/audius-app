@@ -119,3 +119,41 @@ button {
   background: var(--main-bg) !important;
   color: var(--main-text);
 }
+
+.rdp-chevron {
+  fill: var(--hover-color);
+}
+
+.rdp-selected .rdp-day_button {
+  border: 3px solid var(--hover-color);
+}
+
+.rdp-today:not(.rdp-outside) {
+  color: var(--hover-color);
+  font-weight: bolder;
+  background-color: var(--main-bg);
+}
+
+.rdp-range_end .rdp-day_button {
+  background-color: var(--hover-color);
+}
+
+.rdp-range_start .rdp-day_button {
+  background-color: var(--hover-color);
+}
+
+.rdp-range_middle {
+  background-color: var(--main-bg);
+}
+
+.rdp-range_start {
+  background-color: var(--main-bg) !important;
+}
+
+.rdp-range_end {
+  background-color: var(--main-bg) !important;
+}
+
+.rdp-root {
+  --rdp-accent-background-color:'transparent';
+}

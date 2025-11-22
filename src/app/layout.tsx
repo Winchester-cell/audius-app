@@ -1,4 +1,5 @@
 import 'simplebar-react/dist/simplebar.min.css';
+import "react-day-picker/dist/style.css";
 import "@/styles/globals.css";
 import Providers from "./providers";
 import localFont from "next/font/local";

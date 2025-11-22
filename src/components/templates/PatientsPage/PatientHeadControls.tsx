@@ -10,7 +10,7 @@ const PatientHeadControls = () => {
                 Add patient
             </button>
             <div className="neu__norm p-1 rounded-full">
-                <TextInput width="lg:w-[200px] w-[150px]" iconW="w-4" iconH="h-4" py="py-2" icon={HiMagnifyingGlass} place="Search ..." inputID="search_patient" />
+                <TextInput containerClass="lg:w-[200px] w-[150px] py-2" iconClass="w-4 h-4" icon={HiMagnifyingGlass} place="Search ..." inputID="search_patient" />
             </div>
         </div>
     )

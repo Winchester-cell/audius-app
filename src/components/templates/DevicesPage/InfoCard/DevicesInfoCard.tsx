@@ -17,7 +17,7 @@ const DevicesInfoCard = (props: any) => {
     }
 
     return (
-        <div className="rounded-3xl neu__norm p-5">
+        <div className="rounded-3xl neu__norm p-5 transition-all duration-700 hover:scale-[1.03]">
             <div style={{ color: color }} className="flex items-center gap-2">
                 <BiDevices className="w-10 h-10" />
                 <div>

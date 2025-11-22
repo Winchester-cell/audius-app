@@ -215,3 +215,65 @@ export const devices01 = [
   }
 ];
 
+export const sessions = [
+  {
+    id: 1,
+    date: "1403/02/15",
+    time: "10:30",
+    patientName: "علی محمدی",
+    patientCode: "P-1001",
+    deviceUsed: "RF Microneedling #001",
+    deviceVersion: "RF Microneedling v2",
+    duration: "45 min",
+    cost: "1,500K",
+    status: "Completed"
+  },
+  {
+    id: 2,
+    date: "1403/02/15",
+    time: "14:00",
+    patientName: "سارا احمدی",
+    patientCode: "P-1002",
+    deviceUsed: "Laser Therapy #012",
+    deviceVersion: "Laser Therapy Pro",
+    duration: "30 min",
+    cost: "2,000K",
+    status: "Completed"
+  },
+  {
+    id: 3,
+    date: "1403/02/14",
+    time: "09:15",
+    patientName: "رضا کریمی",
+    patientCode: "P-1003",
+    deviceUsed: "RF Microneedling #002",
+    deviceVersion: "RF Microneedling v2",
+    duration: "50 min",
+    cost: "1,800K",
+    status: "Completed"
+  },
+  {
+    id: 4,
+    date: "1403/02/14",
+    time: "11:30",
+    patientName: "مریم رضایی",
+    patientCode: "P-1004",
+    deviceUsed: "Ultrasound #008",
+    deviceVersion: "Ultrasound Scanner Pro",
+    duration: "25 min",
+    cost: "1,200K",
+    status: "Completed"
+  },
+  {
+    id: 5,
+    date: "1403/02/13",
+    time: "15:45",
+    patientName: "حسین نوری",
+    patientCode: "P-1005",
+    deviceUsed: "ECG Monitor #005",
+    deviceVersion: "ECG Monitor Advanced",
+    duration: "20 min",
+    cost: "800K",
+    status: "Completed"
+  }
+];

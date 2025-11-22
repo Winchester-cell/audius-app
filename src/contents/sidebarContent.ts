@@ -48,6 +48,12 @@ const sideBarContent: Fields[] = [
             },
             {
                 type: "single-item",
+                href: "/sessions",
+                text: "sidebar.sessions",
+                icon: RiStethoscopeFill,
+            },
+                  {
+                type: "single-item",
                 href: "/clinics",
                 text: "sidebar.clinics",
                 icon: BsFillBuildingFill,
@@ -57,12 +63,6 @@ const sideBarContent: Fields[] = [
                 href: "/admin-dashboard",
                 text: "sidebar.adminDashboard",
                 icon: MdDashboard,
-            },
-            {
-                type: "single-item",
-                href: "#",
-                text: "sidebar.sessions",
-                icon: RiStethoscopeFill,
             },
             {
                 type: "single-item",
