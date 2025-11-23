@@ -3,9 +3,10 @@ import PatientHeadControls from "@/components/templates/PatientsPage/PatientHead
 import PatientsTable from "@/components/templates/PatientsPage/PatientsTable"
 
 const PatientsPage = () => {
+
     return (
         <div className="px-5 pb-5 flex flex-col gap-5 ">
-            <HeadTitle title="Patients management" description="Manage patients info and history">
+            <HeadTitle title="patientpage.patientsManagement" description="patientpage.patientsManagementDescription">
                 <PatientHeadControls />
             </HeadTitle>
             <PatientsTable />

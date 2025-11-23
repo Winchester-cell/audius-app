@@ -1,3 +1,4 @@
+'use client'
 import OfflineDevicesKPI from "./KpiCards/OfflineDevices"
 import OnlineDevicesKPI from "./KpiCards/OnlineDevices"
 import RepairDevicesKPI from "./KpiCards/RepairDevices"

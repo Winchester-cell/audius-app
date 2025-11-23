@@ -1,20 +1,29 @@
+'use client'
 import { patients } from "@/data/database"
 import PatientTableRow from "./TableItem/PatientTableRow"
+import { useTranslation } from "react-i18next"
+import { tableHeadStyles } from "@/data/stylesdata"
 
 const PatientsTable = () => {
+
+    const {t} = useTranslation()
+
     return (
-        <div className="w-full p-2 neu__norm rounded-3xl scale-[1]">
-            <div className="w-full p-3 neu__inner rounded-2xl flex flex-col gap-3 overflow-x-auto">
-                {/* Table head */}
-                <div className="w-4xl xl:w-full text-[12px] px-7 py-5 grid grid-flow-col auto-cols-fr neu__norm rounded-2xl font-semibold text-white bg-(--hover-color)">
-                    <div className="border-e-2 border-white ps-5">Name</div>
-                    <div className="border-e-2 border-white ps-5">Patient Code</div>
-                    <div className="border-e-2 border-white ps-5">Phone</div>
-                    <div className="border-e-2 border-white ps-5">Gender</div>
-                    <div className="border-e-2 border-white ps-5">Sessions</div>
-                    <div className="border-e-2 border-white ps-5">Last Visit</div>
-                    <div className="ps-5">Action</div>
+        <div className="rounded-2xl overflow-x-auto p-2">
+
+            {/* Table head */}
+            <div className="px-3 neu__norm rounded-t-2xl font-semibold xl:w-full w-4xl">
+                <div className="text-[12px] px-7 py-5 grid grid-flow-col auto-cols-fr">
+                    <div className={`${tableHeadStyles}`}>{t('patientpage.name')}</div>
+                    <div className={`${tableHeadStyles}`}>{t('patientpage.patientCode')}</div>
+                    <div className={`${tableHeadStyles}`}>{t('patientpage.phone')}</div>
+                    <div className={`${tableHeadStyles}`}>{t('patientpage.gender')}</div>
+                    <div className={`${tableHeadStyles}`}>{t('patientpage.sessions')}</div>
+                    <div className={`${tableHeadStyles}`}>{t('patientpage.lastVisit')}</div>
+                    <div className="ps-5">{t('patientpage.action')}</div>
                 </div>
+            </div>
+            <div className="neu__norm rounded-b-2xl px-3 py-3 flex flex-col gap-3 xl:w-full w-4xl">
                 {
                     patients.map(item => {
                         return (
@@ -23,6 +32,7 @@ const PatientsTable = () => {
                     })
                 }
             </div>
+
         </div>
     )
 }

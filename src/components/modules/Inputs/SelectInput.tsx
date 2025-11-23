@@ -6,7 +6,6 @@ import makeAnimated from 'react-select/animated';
 
 
 interface MultiSelectProps {
-    width?: string,
     icon?: React.ElementType,
     options: { value: string, label: string }[],
     containerClass?: string,
@@ -14,11 +13,14 @@ interface MultiSelectProps {
     place: string,
     padding?: string | number,
     menuWidth?: string | number,
+    isMulti: boolean,
+    closeMenuOnSelect: boolean,
+    isSearchable: boolean,
 }
 
 const animatedComponents = makeAnimated()
 
-const MultiSelectInput: FC<MultiSelectProps> = ({place, icon: Icon, containerClass = 'w-full gap-3', iconClass = 'w-5 h-5', options, padding = '15px 20px', menuWidth = '100%' }) => {
+const SelectInput: FC<MultiSelectProps> = ({ isSearchable, closeMenuOnSelect, isMulti, place, icon: Icon, containerClass = 'w-full gap-3', iconClass = 'w-5 h-5', options, padding = '15px 20px', menuWidth = '100%' }) => {
     return (
         <div className={`${containerClass} flex items-center neu__inner px-5 rounded-full py-[5px] text-(--alt-text)`}>
             {
@@ -27,16 +29,17 @@ const MultiSelectInput: FC<MultiSelectProps> = ({place, icon: Icon, containerCla
             <div className='grow'>
                 <Select
                     placeholder={place}
-                    closeMenuOnSelect={false}
+                    closeMenuOnSelect={closeMenuOnSelect}
                     components={animatedComponents}
-                    isMulti
+                    isMulti={isMulti}
                     options={options}
                     styles={setInputSelectInputStyles({ padding, menuWidth })}
                     unstyled
+                    isSearchable={isSearchable}
                 />
             </div>
         </div>
     )
 }
 
-export default MultiSelectInput
+export default SelectInput

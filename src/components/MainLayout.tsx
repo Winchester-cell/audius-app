@@ -10,7 +10,7 @@ import SidebarOpen from "./modules/Controls/SideBarOpen"
 
 const MainLayout: FC<PropsWithChildren> = ({ children }) => {
 
-    const { isSideBarCollapse, setSideBarOpen } = useSideBarStore()
+    const { isSideBarCollapse, setSideBarOpen, isMobile } = useSideBarStore()
     const pathname = usePathname()
     const { i18n } = useTranslation()
 
@@ -19,12 +19,18 @@ const MainLayout: FC<PropsWithChildren> = ({ children }) => {
         vw < 1024 ? setSideBarOpen(false) : setSideBarOpen(true)
     }, [])
 
+    useEffect(() => {
+        if (isMobile) {
+            setSideBarOpen(false)
+        }
+    }, [isMobile, pathname])
+
     let openClass = isSideBarCollapse ? 'w-full lg:w-[calc(100%-100px)] ms-auto' : 'w-full lg:w-[calc(100%-300px)] ms-auto'
 
     if (pathname === '/login') return <>{children}</>
 
     return (
-        <div className={`${i18n.language === 'fa' ? 'rtl font-(--main-persian)' : 'font-(--main-font)'} w-full`}>
+        <div className={`${i18n.language === 'fa' ? 'rtl font_per' : 'font_en'} w-full`}>
             <SideBar />
             <div className={`${openClass} transition-all duration-500`}>
                 <div className="w-full flex items-center gap-3 p-5 overflow-hidden">

@@ -7,7 +7,7 @@ const PatientsCard = ({ name, service, date, time }: any) => {
                     <AiOutlineUser className="lg:w-7 lg:h-7 w-5 h-5" />
                 </div>
                 <div className="text-[10px]">
-                    <div className="font-semibold ">{name}</div>
+                    <div className="font-semibold font_per">{name}</div>
                     <div className="text-(--alt-text)">{service}</div>
                 </div>
             </div>

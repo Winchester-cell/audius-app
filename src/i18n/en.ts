@@ -29,6 +29,64 @@ export const en = {
         latestSessions: 'Latest sessions',
         clinicsDevicesStatus: `Clinic's devices status`,
     },
+    // patients page => '/patients'
+    patientpage: {
+        patientsManagement: "Patients management",
+        patientsManagementDescription: "Manage patients info and history",
+        addPatient: "Add patient",
+        name: "Name",
+        patientCode: "Patient Code",
+        phone: "Phone",
+        gender: "Gender",
+        sessions: "Sessions",
+        lastVisit: "Last Visit",
+        action: "Action",
+
+    },
+    // devices page => '/devices'
+    devicespage: {
+        devices: "Devices",
+        monitoringAndManagingDevices: "Monitoring and managing devices",
+        onlineDevices: "Online devices",
+        offlineDevices: "Offline devices",
+        needsRepair: "Needs repair",
+        totalDevices: "Total devices",
+        serialNumber: "Serial Number",
+        lastUsed: "Last Used",
+        installationDate: "Installation Date",
+        lastService: "Last Service",
+        connectionStatus: "Connection Status",
+        category: "Category",
+        startSession: "Start Session",
+        settings: "Settings",
+
+    },
+    // sessions page => '/sessions'
+    sessionspage: {
+        sessions: "Sessions",
+        viewAndManagingSessions: "View and managing sessions",
+        filters: "Filters",
+        patientsName: "Patient's name",
+        device: "Device",
+        status: "Status",
+        pickADate: "Pick a date",
+        clearFilters: "Clear filters",
+        timeAndDate: "Time & Date",
+        patientName: "Patient Name",
+        patientCode: "Patient Code",
+        usedDevice: "Used Device",
+        duration: "Duration",
+        cost: "Cost",
+        action: "Action",
+    },
+    // appointments page => '/appointments'
+    appointmentspage: {
+        appointmentScheduling: "Appointment Scheduling",
+        managingTreatmentAppointments: "Managing treatment appointments",
+        todaysAppointments: "Today's Appointments",
+        confirmed: "Confirmed",
+        pending: "Pending",
+    },
     // sidebar 
     sidebar: {
         dashboard: 'Dashboard',
@@ -52,6 +110,9 @@ export const en = {
             thursday: 'Thursday',
             friday: 'Friday',
             saturday: 'Saturday',
-        }
+        },
+        search: 'Search',
+        from: 'From',
+        to: 'to',
     }
 }

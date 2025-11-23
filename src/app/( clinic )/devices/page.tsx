@@ -5,7 +5,7 @@ import DevicesKpiSection from "@/components/templates/DevicesPage/DevicesKpiSect
 const DevicesPage = () => {
     return (
         <div className="px-5 pb-5 flex flex-col gap-5">
-            <HeadTitle title="Devices" description="Monotiring and managing devices" />
+            <HeadTitle title="devicespage.devices" description="devicespage.monitoringAndManagingDevices" />
             <DevicesKpiSection />
             <DevicesInfoCardSection />
         </div>

@@ -8,7 +8,7 @@ const SessionsPage = () => {
 
     return (
         <div className="px-5 pb-5 flex flex-col gap-5">
-            <HeadTitle title="Sessions" description="View and managing sessions" />
+            <HeadTitle title="sessionspage.sessions" description="sessionspage.viewAndManagingSessions" />
             <FilterControlsSection />
             <SessionsTable />
         </div>

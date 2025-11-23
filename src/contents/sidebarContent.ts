@@ -52,7 +52,13 @@ const sideBarContent: Fields[] = [
                 text: "sidebar.sessions",
                 icon: RiStethoscopeFill,
             },
-                  {
+            {
+                type: "single-item",
+                href: "/appointments",
+                text: "sidebar.appointments",
+                icon: MdEventAvailable,
+            },
+            {
                 type: "single-item",
                 href: "/clinics",
                 text: "sidebar.clinics",
@@ -63,12 +69,6 @@ const sideBarContent: Fields[] = [
                 href: "/admin-dashboard",
                 text: "sidebar.adminDashboard",
                 icon: MdDashboard,
-            },
-            {
-                type: "single-item",
-                href: "#",
-                text: "sidebar.appointments",
-                icon: MdEventAvailable,
             },
             {
                 type: "single-item",

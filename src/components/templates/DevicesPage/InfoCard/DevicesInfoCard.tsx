@@ -1,3 +1,5 @@
+'use client'
+import { useTranslation } from "react-i18next"
 import { AiFillSetting, AiOutlineHistory } from "react-icons/ai"
 import { BiDevices } from "react-icons/bi"
 import { GiCheckMark } from "react-icons/gi"
@@ -7,6 +9,9 @@ import { TbCategory } from "react-icons/tb"
 const DevicesInfoCard = (props: any) => {
 
     const { title, model, status, serialNumber, lastUsed, installationDate, lastService, connectionStatus, category } = props
+
+    const {t} = useTranslation()
+
     let color: string = ''
     if (status === 'online') {
         color = 'oklch(70.4% 0.14 182.503)'
@@ -27,34 +32,34 @@ const DevicesInfoCard = (props: any) => {
             </div>
             <div className="px-3 py-5 neu__inner mt-5 rounded-2xl flex flex-col gap-3">
                 <div className="flex items-center justify-between neu__norm py-2 px-5 rounded-full">
-                    <span className="font-semibold flex items-center gap-1 text-pink-500"><IoBarcodeSharp className="text-lg" />Serial Number</span>
+                    <span className="font-semibold flex items-center gap-1 text-pink-500"><IoBarcodeSharp className="text-lg" />{t('devicespage.serialNumber')}</span>
                     <span className="text-[10px]">{serialNumber}</span>
                 </div>
                 <div className="flex items-center justify-between neu__norm py-2 px-5 rounded-full">
-                    <span className="font-semibold flex items-center gap-1 text-cyan-500"><AiOutlineHistory className="text-lg" />Last Used</span>
+                    <span className="font-semibold flex items-center gap-1 text-cyan-500"><AiOutlineHistory className="text-lg" />{t('devicespage.lastUsed')}</span>
                     <span className="text-[10px]">{lastUsed}</span>
                 </div>
                 <div className="flex items-center justify-between neu__norm py-2 px-5 rounded-full">
-                    <span className="font-semibold flex items-center gap-1 text-sky-500"><IoBuildOutline className="text-lg" />Installation Date</span>
+                    <span className="font-semibold flex items-center gap-1 text-sky-500"><IoBuildOutline className="text-lg" />{t('devicespage.installationDate')}</span>
                     <span className="text-[10px]">{installationDate}</span>
                 </div>
                 <div className="flex items-center justify-between neu__norm py-2 px-5 rounded-full">
-                    <span className="font-semibold flex items-center gap-1 text-yellow-500"><IoBuildOutline className="text-lg" />Last Service</span>
+                    <span className="font-semibold flex items-center gap-1 text-yellow-500"><IoBuildOutline className="text-lg" />{t('devicespage.lastService')}</span>
                     <span className="text-[10px]">{lastService}</span>
                 </div>
                 <div className="flex items-center justify-between neu__norm py-2 px-5 rounded-full">
-                    <span className="font-semibold flex items-center gap-1 text-teal-500"><IoWifi className="text-lg" />Connection Status</span>
+                    <span className="font-semibold flex items-center gap-1 text-teal-500"><IoWifi className="text-lg" />{t('devicespage.connectionStatus')}</span>
                     <span className={`${connectionStatus === 'connected' ? 'text-teal-500' : 'text-rose-500'} text-[10px] font-semibold`}>{connectionStatus}</span>
                 </div>
                 <div className="flex items-center justify-between neu__norm py-2 px-5 rounded-full">
-                    <span className="font-semibold flex items-center gap-1 text-cyan-600"><TbCategory className="text-lg" />Category</span>
+                    <span className="font-semibold flex items-center gap-1 text-cyan-600"><TbCategory className="text-lg" />{t('devicespage.category')}</span>
                     <span className="text-[10px]">{category}</span>
                 </div>
 
             </div>
             <div className="flex p-5 gap-5 justify-center font-semibold">
-                <button className="w-[150px] neu__norm py-4 rounded-full flex items-center gap-2 justify-center transition-all duration-700 hover:bg-(--hover-color) hover:text-white hover:scale-[1.03]"><GiCheckMark />Start Session</button>
-                <button className="w-[150px] neu__norm py-4 rounded-full flex items-center gap-1 justify-center transition-all duration-700 hover:bg-(--hover-color) hover:text-white hover:scale-[1.03]"><AiFillSetting/>Settings</button>
+                <button className="w-[150px] neu__norm py-4 rounded-full flex items-center gap-2 justify-center transition-all duration-700 hover:bg-(--hover-color) hover:text-white hover:scale-[1.03]"><GiCheckMark />{t('devicespage.startSession')}</button>
+                <button className="w-[150px] neu__norm py-4 rounded-full flex items-center gap-1 justify-center transition-all duration-700 hover:bg-(--hover-color) hover:text-white hover:scale-[1.03]"><AiFillSetting/>{t('devicespage.settings')}</button>
             </div>
         </div>
     )

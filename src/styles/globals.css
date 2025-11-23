@@ -37,9 +37,16 @@
 body {
   /* font-family: var(--main-font); */
   background-color: var(--main-bg);
-  user-select: none;
   color: var(--main-text);
   font-size: 12px;
+}
+
+.font_en{
+  font-family: var(--main-font);
+}
+
+.font_per{
+  font-family: var(--main-persian);
 }
 
 .rtl {

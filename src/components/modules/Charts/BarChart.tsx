@@ -37,7 +37,7 @@ const BarChart: FC<BarChartProps> = ({ series, colors, categories, title, distri
     title: {
       text: title,
       align: 'center',
-      style: { fontSize: '16px', fontFamily: 'inherit', fontWeight: '500', color: 'var(--main-text)' }
+      style: { fontSize: '16px', fontFamily: 'inherit', fontWeight: '600', color: 'var(--main-text)' }
     },
     plotOptions: {
       bar: {
