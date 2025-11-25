@@ -86,7 +86,45 @@ export const fa = {
         todaysAppointments: "نوبت‌های امروز",
         confirmed: "تأیید شده",
         pending: "در انتظار",
+        patientName: "نام بیمار",
+        patientCode: "کد بیمار",
+        date: "تاریخ",
+        time: "ساعت",
+        deviceType: "نوع دستگاه",
+        phoneNumber: "شماره تماس",
+        status: "وضعیت",
+        operations: "عملیات"
 
+    },
+    // reports page => '/reports'
+    reportpage: {
+        reportsAndStatistics: "گزارشات و آمار",
+        clinicPerformanceReports: "گزارشات و آمار عملکرد کلینیک",
+        timeFrame: "بازه زمانی:",
+        weekly: "هفتگی",
+        monthly: "ماهانه",
+        yearly: "سالانه",
+        monthlySessionProcess: "روند جلسات ماهانه",
+        weeklyIncome: "درآمد هفتگی",
+        frequentPatients: "بیماران پرمراجعه",
+        mostUsedDevices: "پرکاربردترین دستگاه‌ها"
+    },
+    // settings page => '/settings'
+    settingspage: {
+        clinicSettings: "تنظیمات کلینیک",
+        clinicAndProfileSettings: "تنظیمات کلینیک و پروفایل کاربری",
+        clinicInfo: "اطلاعات کلینیک",
+        clinicName: "نام کلینیک",
+        clinicPhone: "شماره تماس کلینیک",
+        clinicAddress: "آدرس کلینیک",
+        userProfile: "پروفایل کاربری",
+        systemSettings: "تنظیمات سیستم",
+        emailNotifications: "نوتیفیکیشن‌های ایمیل",
+        receiveEmailAlerts: "دریافت اعلان‌ها از طریق ایمیل",
+        smsNotifications: "نوتیفیکیشن‌های SMS",
+        receiveSmsAlerts: "دریافت اعلان‌ها از طریق پیامک",
+        appointmentReminders: "یادآوری نوبت‌ها",
+        sendRemindersToPatients: "ارسال یادآوری به بیماران"
     },
     // sidebar 
     sidebar: {
@@ -102,6 +140,9 @@ export const fa = {
     },
     // common words
     common: {
+        fname: "نام و نام خانوادگی",
+        role: "نقش",
+        saveSettings: "ذخیره تنظیمات",
         password: 'رمز عبور',
         days: {
             sunday: 'یکشنبه',
@@ -112,8 +153,23 @@ export const fa = {
             friday: 'جمعه',
             saturday: 'شنبه',
         },
+        months: {
+            january: "فروردین",
+            february: "اردیبهشت",
+            march: "خرداد",
+            april: "تیر",
+            may: "مرداد",
+            june: "شهریور",
+            july: "مهر",
+            august: "آبان",
+            september: "آذر",
+            october: "دی",
+            november: "بهمن",
+            december: "اسفند"
+        },
         search: 'جستوجو',
         from: 'از تاریخ',
         to: 'تا تاریخ',
+        session: 'جلسه',
     }
 }

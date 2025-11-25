@@ -60,6 +60,18 @@ const sideBarContent: Fields[] = [
             },
             {
                 type: "single-item",
+                href: "/reports",
+                text: "sidebar.reports",
+                icon: MdOutlineMonitor
+            },
+            {
+                type: "single-item",
+                href: "/settings",
+                text: "sidebar.settings",
+                icon: IoSettingsSharp
+            },
+            {
+                type: "single-item",
                 href: "/clinics",
                 text: "sidebar.clinics",
                 icon: BsFillBuildingFill,
@@ -69,18 +81,6 @@ const sideBarContent: Fields[] = [
                 href: "/admin-dashboard",
                 text: "sidebar.adminDashboard",
                 icon: MdDashboard,
-            },
-            {
-                type: "single-item",
-                href: "#",
-                text: "sidebar.reports",
-                icon: MdOutlineMonitor
-            },
-            {
-                type: "single-item",
-                href: "#",
-                text: "sidebar.settings",
-                icon: IoSettingsSharp
             },
         ],
     },

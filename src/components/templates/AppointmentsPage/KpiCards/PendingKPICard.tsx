@@ -14,7 +14,7 @@ const PendingKPICard = () => {
                 <div className="font-bold ">{t('appointmentspage.pending')}</div>
             </div>
             <div className="neu__inner py-2 px-5 rounded-full text-lg font-semibold">
-                4
+                0
             </div>
         </div>
     )

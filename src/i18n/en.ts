@@ -86,6 +86,44 @@ export const en = {
         todaysAppointments: "Today's Appointments",
         confirmed: "Confirmed",
         pending: "Pending",
+        patientName: "Patient Name",
+        patientCode: "Patient Code",
+        date: "Date",
+        time: "Time",
+        deviceType: "Device Type",
+        phoneNumber: "Phone Number",
+        status: "Status",
+        operations: "Operations"
+    },
+    // reports page => '/reports'
+    reportpage: {
+        reportsAndStatistics: "Reports and Statistics",
+        clinicPerformanceReports: "Clinic Performance Reports and Statistics",
+        timeFrame: "Time Frame",
+        weekly: "Weekly",
+        monthly: "Monthly",
+        yearly: "Yearly",
+        monthlySessionProcess: "Monthly session process",
+        weeklyIncome: "Weekly income",
+        frequentPatients: "Frequent patients",
+        mostUsedDevices: "Most used devices",
+    },
+    // settings page => '/settings'
+    settingspage: {
+        clinicSettings: "Clinic settings",
+        clinicAndProfileSettings: "Clinic and user profile settings",
+        clinicInfo: "Clinic information",
+        clinicName: "Clinic name",
+        clinicPhone: "Clinic phone number",
+        clinicAddress: "Clinic Address",
+        userProfile: "User profile",
+        systemSettings: "System settings",
+        emailNotifications: "Email notifications",
+        receiveEmailAlerts: "Receive alerts via email",
+        smsNotifications: "SMS notifications",
+        receiveSmsAlerts: "Receive alerts via SMS",
+        appointmentReminders: "Appointment reminders",
+        sendRemindersToPatients: "Send reminders to patients"
     },
     // sidebar 
     sidebar: {
@@ -102,6 +140,9 @@ export const en = {
     // common words
     common: {
         password: 'Password',
+        role: "Role",
+        fname: "Full name",
+        saveSettings: "Save settings",
         days: {
             sunday: 'Sunday',
             monday: 'Monday',
@@ -111,8 +152,23 @@ export const en = {
             friday: 'Friday',
             saturday: 'Saturday',
         },
+        months: {
+            january: "January",
+            february: "February",
+            march: "March",
+            april: "April",
+            may: "May",
+            june: "June",
+            july: "July",
+            august: "August",
+            september: "September",
+            october: "October",
+            november: "November",
+            december: "December"
+        },
         search: 'Search',
         from: 'From',
         to: 'to',
+        session: 'Session',
     }
 }

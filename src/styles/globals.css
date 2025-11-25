@@ -41,11 +41,11 @@ body {
   font-size: 12px;
 }
 
-.font_en{
+.font_en {
   font-family: var(--main-font);
 }
 
-.font_per{
+.font_per {
   font-family: var(--main-persian);
 }
 
@@ -122,9 +122,19 @@ button {
   opacity: 0;
 }
 
-.apexcharts-tooltip {
+
+.apexcharts-xaxistooltip{
+  display: none !important;
+}
+
+.apexcharts-tooltip,
+.apexcharts-tooltip-title,
+.apexcharts-tooltip::after,
+.apexcharts-tooltip::before {
   background: var(--main-bg) !important;
   color: var(--main-text);
+  font-weight: 600;
+  border-color: var(--alt-text) !important;
 }
 
 .rdp-chevron {
@@ -162,5 +172,5 @@ button {
 }
 
 .rdp-root {
-  --rdp-accent-background-color:'transparent';
+  --rdp-accent-background-color: 'transparent';
 }

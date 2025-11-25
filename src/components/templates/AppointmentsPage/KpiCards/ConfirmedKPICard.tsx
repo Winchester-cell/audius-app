@@ -14,7 +14,7 @@ const ConfirmedKPICard = () => {
                 <div className="font-bold ">{t('appointmentspage.confirmed')}</div>
             </div>
             <div className="neu__inner py-2 px-5 rounded-full text-lg font-semibold">
-                0
+                4
             </div>
         </div>
     )

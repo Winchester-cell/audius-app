@@ -4,38 +4,85 @@ export const appointments = [
     name: "علی محمدی",
     service: "RF Microneedling v2",
     date: "1403/02/15",
-    time: "10:30"
+    time: "10:30",
+    patientCode: "P-1001",
   },
   {
     id: 2,
     name: "سارا احمدی",
     service: "Laser Therapy Pro",
     date: "1403/02/15",
-    time: "14:00"
+    time: "14:00",
+    patientCode: "P-1002",
   },
   {
     id: 3,
     name: "رضا کریمی",
     service: "RF Microneedling v2",
     date: "1403/02/14",
-    time: "09:15"
+    time: "09:15",
+    patientCode: "P-1003",
   },
   {
     id: 4,
     name: "مریم رضایی",
     service: "Ultrasound Scanner Pro",
     date: "1403/02/14",
-    time: "11:30"
+    time: "11:30",
+    patientCode: "P-1004",
   },
   {
     id: 5,
     name: "حسین نوری",
     service: "ECG Monitor Advanced",
     date: "1403/02/13",
-    time: "15:45"
+    time: "15:45",
+    patientCode: "P-1005",
   }
 ];
 
+export const appointments01 = [
+  {
+    id: 1,
+    patientName: "فاطمه حسینی",
+    patientCode: "P-1006",
+    date: "1403/02/16",
+    time: "09:00",
+    deviceType: "RF Microneedling v2",
+    phoneNumber: "09129998877",
+    status: "confirmed"
+  },
+  {
+    id: 2,
+    patientName: "علی محمدی",
+    patientCode: "P-1001",
+    date: "1403/02/16",
+    time: "11:00",
+    deviceType: "Laser Therapy Pro",
+    phoneNumber: "09121234567",
+    status: "confirmed"
+  },
+  {
+    id: 3,
+    patientName: "سارا احمدی",
+    patientCode: "P-1002",
+    date: "1403/02/17",
+    time: "10:30",
+    deviceType: "Ultrasound Scanner Pro",
+    phoneNumber: "09129876543",
+    status: "confirmed"
+  },
+  {
+    id: 4,
+    patientName: "رضا کریمی",
+    patientCode: "P-1003",
+    date: "1403/02/17",
+    time: "14:00",
+    deviceType: "RF Microneedling v2",
+    phoneNumber: "09123456789",
+    status: "confirmed"
+  }
+];
 
 export const devices = [
   {
