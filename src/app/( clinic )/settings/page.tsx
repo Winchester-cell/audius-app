@@ -6,7 +6,7 @@ import SystemSettingsSection from '@/components/templates/SettingsPage/SystemSet
 const SettingsPage = () => {
     return (
         <div className='px-5 pb-5 flex flex-col gap-5'>
-            <HeadTitle title='settings.clinicSettings' description='settings.clinicAndProfileSettings' />
+            <HeadTitle title='settingspage.clinicSettings' description='settingspage.clinicAndProfileSettings' />
             <ClinicSettingsSection />
             <ProfileSettingsSection />
             <SystemSettingsSection />

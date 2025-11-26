@@ -42,7 +42,7 @@ const SystemSettingsSection = () => {
                     <input id="#1" defaultChecked type="checkbox" className="accent-(--main-text) outline-(--main-text) border-(--main-text) bg-transparent" />
                 </label>
                 <div className="flex justify-end">
-                    <button className="bg-teal-500 block text-white w-[150px] py-3 rounded-full duration-500 transition-transform hover:scale-[1.03]">{t('common.saveSettings')}</button>
+                    <button className="bg-teal-500 block text-white w-full lg:w-[150px] py-3 rounded-full duration-500 transition-transform hover:scale-[1.03]">{t('common.saveSettings')}</button>
                 </div>
             </div>
         </div>)
