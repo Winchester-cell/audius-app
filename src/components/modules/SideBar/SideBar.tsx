@@ -20,7 +20,6 @@ const SideBar = () => {
                     </div>
                     <NavigateSection />
                     <Clock />
-                    <ControlSection />
                 </div>
             </div>
             {/* mobile overlay */}

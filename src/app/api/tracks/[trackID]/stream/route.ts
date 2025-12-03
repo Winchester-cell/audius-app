@@ -5,15 +5,21 @@ import { NextRequest } from "next/server";
 export async function GET(req: NextRequest, { params }: any) {
     try {
         const { trackID } = await params
-        const res = await mainApi.get(`/tracks/${trackID}/stream`, { responseType: "arraybuffer" })
-        console.log(res.data);
-        // what should i return ?
+        const range = req.headers.get("range") || "bytes=0-";
+        const res = await mainApi.get(`/tracks/${trackID}/stream`, {
+            responseType: "stream",
+            headers: {
+                Range: range, 
+            },
+        });
+
         return new Response(res.data, {
-            status: 200,
+            status: res.status === 206 ? 206 : 200,
             headers: {
                 "Content-Type": "audio/mpeg",
-                "Content-Length": res.data.byteLength.toString(),
-                "Cache-Control": "no-cache",
+                "Content-Length": res.headers["content-length"] || "",
+                "Accept-Ranges": "bytes",
+                "Content-Range": res.headers["content-range"] || "",
             },
         });
     } catch (err) {

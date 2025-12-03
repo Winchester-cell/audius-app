@@ -4,6 +4,7 @@ import ProfileSection from "./ProfileSection";
 import LoginLogoutArea from "../Controls/LoginLogout";
 import TextInput from "../Inputs/TextInputs";
 import { BiSearchAlt2 } from "react-icons/bi";
+import ThemeToggle from "../Controls/ThemeToggle";
 
 export default function Header() {
 
@@ -14,11 +15,13 @@ export default function Header() {
         {/* logo */}
         <Logo />
         {/* Clock & bell */}
-        <div className="flex items-center gap-5">
-          <BsFillBellFill className="w-4 h-4 transition-all duration-500 hover:text-(--hover-color) cursor-pointer hover:scale-[1.2]" />
+        <div className="hidden lg:flex items-center gap-5">
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+          </div>
           <TextInput icon={BiSearchAlt2} inputID="searchbar" place="Search ..." containerClass="py-2 gap-2" />
           <ProfileSection />
-          <div className="-ms-3"><LoginLogoutArea/></div>
+          <div className="-ms-3"><LoginLogoutArea /></div>
         </div>
       </div>
     </div>

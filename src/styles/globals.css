@@ -45,7 +45,7 @@ body {
   font-family: var(--main-font);
 }
 
-.container-c{
+.container-c {
   max-width: 2000px;
 }
 
@@ -59,6 +59,22 @@ body {
   /* background: #E4EDF6; */
   box-shadow: inset 2px 2px 7px var(--shadow-dark),
     inset -4px -4px 5px var(--shadow-light);
+}
+
+.neu__hover {
+  transition: all ease-in-out 700ms;
+  box-shadow: 2px 2px 7px var(--shadow-dark),
+    -4px -4px 5px var(--shadow-light);
+}
+
+.neu__hover:hover {
+  box-shadow: inset 2px 2px 7px var(--shadow-dark),
+    inset -4px -4px 5px var(--shadow-light);
+}
+
+.img_shadow {
+  box-shadow: inset 10px 10px 20px #00000071,
+    inset -10px -10px 20px #00000071;
 }
 
 input {
@@ -113,6 +129,3 @@ button {
 .react-resizable-handle.react-resizable-handle-se {
   opacity: 0;
 }
-
-
-
