@@ -3,7 +3,6 @@ import { useSideBarStore } from '@/stores/sideBarStore'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FC } from 'react'
-import { useTranslation } from 'react-i18next'
 
 interface SidBarSingleItemProps extends SingleItemType {
     fontSize?: number
@@ -14,7 +13,6 @@ interface SidBarSingleItemProps extends SingleItemType {
 
 const SideBarSingleItem: FC<SidBarSingleItemProps> = ({ isSubmenu, text, icon: Icon, href, fontSize, iconW = 'w-5', iconH = 'h-5' }) => {
 
-    const { t } = useTranslation()
     const pathname = usePathname()
     const { isSideBarCollapse } = useSideBarStore()
 
@@ -24,7 +22,7 @@ const SideBarSingleItem: FC<SidBarSingleItemProps> = ({ isSubmenu, text, icon: I
                 <Icon className={`${iconW} ${iconH}`} />
                 {
                     !isSideBarCollapse &&
-                    <span>{t(text)}</span>
+                    <span>{text}</span>
                 }
             </Link>
         </div>

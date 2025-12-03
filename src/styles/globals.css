@@ -18,11 +18,11 @@
 }
 
 .dark {
-  --main-bg: #22343C;
-  --main-text: #dedede;
+  --main-bg: #24272C;
+  --main-text: #c1c1c1;
   --alt-text: #A0A5A9;
-  --shadow-light: #263b43;
-  --shadow-dark: #1c2a31;
+  --shadow-light: #2B2E33;
+  --shadow-dark: #1D2024;
   --hover-color: #00786f;
   --navbar-active-route: #00bba7;
   --greens: #009689;
@@ -35,7 +35,7 @@
 }
 
 body {
-  /* font-family: var(--main-font); */
+  font-family: var(--main-font);
   background-color: var(--main-bg);
   color: var(--main-text);
   font-size: 12px;
@@ -45,16 +45,8 @@ body {
   font-family: var(--main-font);
 }
 
-.font_per {
-  font-family: var(--main-persian);
-}
-
-.rtl {
-  direction: rtl;
-}
-
-.ltr {
-  direction: ltr;
+.container-c{
+  max-width: 2000px;
 }
 
 .neu__norm {
@@ -123,54 +115,4 @@ button {
 }
 
 
-.apexcharts-xaxistooltip{
-  display: none !important;
-}
 
-.apexcharts-tooltip,
-.apexcharts-tooltip-title,
-.apexcharts-tooltip::after,
-.apexcharts-tooltip::before {
-  background: var(--main-bg) !important;
-  color: var(--main-text);
-  font-weight: 600;
-  border-color: var(--alt-text) !important;
-}
-
-.rdp-chevron {
-  fill: var(--hover-color);
-}
-
-.rdp-selected .rdp-day_button {
-  border: 3px solid var(--hover-color);
-}
-
-.rdp-today:not(.rdp-outside) {
-  color: var(--hover-color);
-  font-weight: bolder;
-  background-color: var(--main-bg);
-}
-
-.rdp-range_end .rdp-day_button {
-  background-color: var(--hover-color);
-}
-
-.rdp-range_start .rdp-day_button {
-  background-color: var(--hover-color);
-}
-
-.rdp-range_middle {
-  background-color: var(--main-bg);
-}
-
-.rdp-range_start {
-  background-color: var(--main-bg) !important;
-}
-
-.rdp-range_end {
-  background-color: var(--main-bg) !important;
-}
-
-.rdp-root {
-  --rdp-accent-background-color: 'transparent';
-}

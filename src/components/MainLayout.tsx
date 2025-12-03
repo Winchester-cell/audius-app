@@ -1,9 +1,8 @@
 'use client'
-import { FC, PropsWithChildren, useEffect, useState } from "react"
+import { FC, PropsWithChildren, useEffect } from "react"
 import SideBar from "./modules/SideBar/SideBar"
 import { usePathname } from "next/navigation"
 import Header from "./modules/Header/Header"
-import { useTranslation } from "react-i18next"
 import { useSideBarStore } from "@/stores/sideBarStore"
 import { getViewPortWidth } from "@/utils/getViewPortW"
 import SidebarOpen from "./modules/Controls/SideBarOpen"
@@ -12,7 +11,6 @@ const MainLayout: FC<PropsWithChildren> = ({ children }) => {
 
     const { isSideBarCollapse, setSideBarOpen, isMobile } = useSideBarStore()
     const pathname = usePathname()
-    const { i18n } = useTranslation()
 
     useEffect(() => {
         const vw = getViewPortWidth()
@@ -25,19 +23,21 @@ const MainLayout: FC<PropsWithChildren> = ({ children }) => {
         }
     }, [isMobile, pathname])
 
-    let openClass = isSideBarCollapse ? 'w-full lg:w-[calc(100%-100px)] ms-auto' : 'w-full lg:w-[calc(100%-300px)] ms-auto'
+    let openClass = isSideBarCollapse ? 'w-full lg:w-[calc(100%-100px)] ms-auto' : 'w-full lg:w-[calc(100%-250px)] ms-auto'
 
     if (pathname === '/login') return <>{children}</>
 
     return (
-        <div className={`${i18n.language === 'fa' ? 'rtl font_per' : 'font_en'} w-full`}>
+        <div className={`w-full container-c mx-auto relative neu__norm h-dvh overflow-hidden`}>
             <SideBar />
-            <div className={`${openClass} transition-all duration-500`}>
-                <div className="w-full flex items-center gap-3 p-5 overflow-hidden">
+            <div className={`${openClass} transition-all duration-500 flex flex-col h-full overflow-y-auto`}>
+                <div className="w-full flex items-center gap-3 p-5">
                     <SidebarOpen />
                     <Header />
                 </div>
-                {children}
+                <div className="grow px-5 pb-5">
+                    {children}
+                </div>
             </div>
         </div>
     )

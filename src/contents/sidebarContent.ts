@@ -1,9 +1,8 @@
-import { BiDevices } from "react-icons/bi";
-import { BsFillBuildingFill } from "react-icons/bs";
-import { FaUsers } from "react-icons/fa";
-import { IoSettingsSharp } from "react-icons/io5";
-import { MdDashboard, MdEventAvailable, MdOutlineMonitor } from "react-icons/md";
-import { RiStethoscopeFill } from "react-icons/ri";
+import { AiOutlineHistory } from "react-icons/ai";
+import { CgPlayList } from "react-icons/cg";
+import { HiBookmark } from "react-icons/hi";
+import { IoMdMusicalNote } from "react-icons/io";
+import { MdDashboard, MdQueueMusic } from "react-icons/md";
 
 export type SingleItemType = {
     type: "single-item";
@@ -31,56 +30,38 @@ const sideBarContent: Fields[] = [
             {
                 type: "single-item",
                 href: "/",
-                text: "sidebar.dashboard",
+                text: "Discover",
                 icon: MdDashboard,
             },
             {
                 type: "single-item",
-                href: "/patients",
-                text: "sidebar.patients",
-                icon: FaUsers
+                href: "#",
+                text: "Tracks",
+                icon: IoMdMusicalNote,
             },
             {
                 type: "single-item",
-                href: "/devices",
-                text: "sidebar.devices",
-                icon: BiDevices,
+                href: "#",
+                text: "Playlists",
+                icon: CgPlayList,
             },
             {
                 type: "single-item",
-                href: "/sessions",
-                text: "sidebar.sessions",
-                icon: RiStethoscopeFill,
+                href: "#",
+                text: "Genres",
+                icon: MdQueueMusic,
             },
             {
                 type: "single-item",
-                href: "/appointments",
-                text: "sidebar.appointments",
-                icon: MdEventAvailable,
+                href: "#",
+                text: "Saved",
+                icon: HiBookmark,
             },
             {
                 type: "single-item",
-                href: "/reports",
-                text: "sidebar.reports",
-                icon: MdOutlineMonitor
-            },
-            {
-                type: "single-item",
-                href: "/settings",
-                text: "sidebar.settings",
-                icon: IoSettingsSharp
-            },
-            {
-                type: "single-item",
-                href: "/clinics",
-                text: "sidebar.clinics",
-                icon: BsFillBuildingFill,
-            },
-            {
-                type: "single-item",
-                href: "/admin-dashboard",
-                text: "sidebar.adminDashboard",
-                icon: MdDashboard,
+                href: "#",
+                text: "History",
+                icon: AiOutlineHistory,
             },
         ],
     },

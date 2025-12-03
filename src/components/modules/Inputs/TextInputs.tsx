@@ -1,22 +1,20 @@
-import { UseFormRegister } from "react-hook-form"
+import { FC } from "react"
 
-interface TextInputProps<T> {
+interface TextInputProps {
     inputID: string
     place: string,
     icon: React.ElementType,
-    registerKey?: keyof T,
-    register?: UseFormRegister<any>,
     containerClass?: string,
     iconClass?: string,
 }
 
-const TextInput = <T,>({ place, icon: Icon, inputID, register, registerKey, iconClass = 'w-5 h-5', containerClass ='py-4 w-full gap-3'}: TextInputProps<T>) => {
+const TextInput: FC<TextInputProps> = ({ place, icon: Icon, inputID, iconClass = 'w-5 h-5', containerClass = 'py-4 w-full gap-3' }) => {
     return (
         <div className={`neu__inner px-5 rounded-full flex ${containerClass} items-center`}>
             <label htmlFor={inputID} className="cursor-pointer">
                 <Icon className={`${iconClass}`} />
             </label>
-            <input {...((register && registerKey) ? register(registerKey.toString()) : {})} id={inputID} type="text" className="block grow" placeholder={place} />
+            <input id={inputID} type="text" className="block grow" placeholder={place} />
         </div>
     )
 }

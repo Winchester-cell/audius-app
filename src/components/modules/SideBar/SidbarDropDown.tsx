@@ -1,13 +1,11 @@
 import { DropDownType } from "@/contents/sidebarContent"
 import { FC, useState } from "react"
-import { useTranslation } from "react-i18next"
 import SideBarSingleItem from "./SideBarSingleItem"
 import { IoIosArrowDown } from "react-icons/io";
 import { useSideBarStore } from "@/stores/sideBarStore";
 
 const SidbarDropDown: FC<DropDownType> = ({ text, icon: Icon, options }) => {
 
-    const { t } = useTranslation()
     const [dropOpen, setDropOpen] = useState<boolean>(false)
     const { isSideBarCollapse } = useSideBarStore()
 
@@ -24,7 +22,7 @@ const SidbarDropDown: FC<DropDownType> = ({ text, icon: Icon, options }) => {
                     }
                     {
                         !isSideBarCollapse &&
-                        <span>{t(text)}</span>
+                        <span>{text}</span>
                     }
                 </div>
                 {
