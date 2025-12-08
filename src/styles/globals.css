@@ -4,9 +4,11 @@
   --main-bg: #E4EDF6;
   --main-text: #7B8CAA;
   --alt-text: #B3B9C5;
+  --colored-text: #0092b8;
   --shadow-light: #edf6ff;
   --shadow-dark: #d2dbe2;
   --hover-color: #0092b8;
+  --bars-color: #C2D1E3;
   --navbar-active-route: #00b8db;
   --greens: #00bba7;
   --reds: #ff637e;
@@ -21,9 +23,11 @@
   --main-bg: #24272C;
   --main-text: #c1c1c1;
   --alt-text: #A0A5A9;
+  --colored-text: #00bba7;
   --shadow-light: #2B2E33;
   --shadow-dark: #1D2024;
   --hover-color: #00786f;
+  --bars-color: #444a52;
   --navbar-active-route: #00bba7;
   --greens: #009689;
   --reds: #ff2056;
@@ -57,17 +61,6 @@ body {
 
 .neu__inner {
   /* background: #E4EDF6; */
-  box-shadow: inset 2px 2px 7px var(--shadow-dark),
-    inset -4px -4px 5px var(--shadow-light);
-}
-
-.neu__hover {
-  transition: all ease-in-out 700ms;
-  box-shadow: 2px 2px 7px var(--shadow-dark),
-    -4px -4px 5px var(--shadow-light);
-}
-
-.neu__hover:hover {
   box-shadow: inset 2px 2px 7px var(--shadow-dark),
     inset -4px -4px 5px var(--shadow-light);
 }
@@ -128,4 +121,67 @@ button {
 
 .react-resizable-handle.react-resizable-handle-se {
   opacity: 0;
+}
+
+.smoothScroll {
+  scroll-behavior: smooth !important;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid var(--main-text);
+  animation:
+    l20-1 0.8s infinite linear alternate,
+    l20-2 1.6s infinite linear;
+}
+
+@keyframes l20-1 {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%)
+  }
+
+  12.5% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%)
+  }
+
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%)
+  }
+
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%)
+  }
+
+  62.5% {
+    clip-path: polygon(50% 50%, 100% 0, 100% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%)
+  }
+
+  75% {
+    clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 100%, 0% 100%)
+  }
+
+  100% {
+    clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%)
+  }
+}
+
+@keyframes l20-2 {
+  0% {
+    transform: scaleY(1) rotate(0deg)
+  }
+
+  49.99% {
+    transform: scaleY(1) rotate(135deg)
+  }
+
+  50% {
+    transform: scaleY(-1) rotate(0deg)
+  }
+
+  100% {
+    transform: scaleY(-1) rotate(-135deg)
+  }
 }

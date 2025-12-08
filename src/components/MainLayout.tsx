@@ -6,6 +6,7 @@ import Header from "./modules/Header/Header"
 import { useSideBarStore } from "@/stores/sideBarStore"
 import { getViewPortWidth } from "@/utils/getViewPortW"
 import SidebarOpen from "./modules/Controls/SideBarOpen"
+import AudioPlayer from "./modules/Player/AudioPlayer"
 
 const MainLayout: FC<PropsWithChildren> = ({ children }) => {
 
@@ -30,12 +31,13 @@ const MainLayout: FC<PropsWithChildren> = ({ children }) => {
     return (
         <div className={`w-full container-c mx-auto relative neu__norm h-dvh overflow-hidden`}>
             <SideBar />
+            <AudioPlayer openClass={openClass} />
             <div className={`${openClass} transition-all duration-500 flex flex-col h-full overflow-y-auto`}>
                 <div className="w-full flex items-center gap-3 p-5">
                     <SidebarOpen />
                     <Header />
                 </div>
-                <div className="grow px-5 pb-5">
+                <div className="grow px-5 pb-5 w-full">
                     {children}
                 </div>
             </div>

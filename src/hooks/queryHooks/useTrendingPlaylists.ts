@@ -2,12 +2,12 @@ import { PlaylistResponse } from "@/types/playlist.type"
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
 
-const usePlaylists = (searchParams: string) => {
+const useTrendingPlaylists = (searchParams: string) => {
 
-    const getPlaylists = async () => {
+    const getTrendingPlaylists = async () => {
         
         try {
-            const res = await axios.get(`/api/playlists/search?${searchParams || ''}`)
+            const res = await axios.get(`/api/playlists/trending?${searchParams || ''}`)
             if (res.status === 200) {
                 return res.data
             }
@@ -18,10 +18,10 @@ const usePlaylists = (searchParams: string) => {
     }
 
     return useQuery<PlaylistResponse>({
-        queryKey: ['playlists', searchParams],
-        queryFn: getPlaylists
+        queryKey: ['playlists/trending', searchParams],
+        queryFn: getTrendingPlaylists
     })
 
 }
 
-export default usePlaylists
+export default useTrendingPlaylists
