@@ -17,9 +17,10 @@ const TrackCard: FC<Track> = (props) => {
     const profilePicID = user.profile_picture ? extractContentId(user.profile_picture["150x150"]) : ''
     const artSize = `150x150`
 
-    const { setTrack , setStreamUrl ,setPlaying } = useAudioStore()
+    const { setTrack , setStreamUrl ,setPlaying , setPlayerVisible } = useAudioStore()
     
     const playHandler = () => {
+        setPlayerVisible(true)
         setStreamUrl(`api/tracks/${id}/stream`)
         setTrack({...props})
         setPlaying(true)

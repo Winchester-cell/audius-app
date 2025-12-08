@@ -7,7 +7,7 @@ import { FaBackward, FaForward, FaPause, FaPlay } from "react-icons/fa"
 
 const AudioPlayer = ({ openClass }: any) => {
 
-  const { track, streamUrl, isPlaying, setPlaying } = useAudioStore()
+  const { track, streamUrl, isPlaying, setPlaying , playerVisible , setPlayerVisible } = useAudioStore()
   const [progressPercent, setProgressPercent] = useState<number | null>(null)
   const audioRef = useRef<HTMLAudioElement>(null)
 
@@ -36,7 +36,7 @@ const AudioPlayer = ({ openClass }: any) => {
   }
 
   return (
-    <div className={`${openClass} absolute bottom-0 end-0 z-50 h-[90px] py-3 px-10 transition-transform duration-500`}>
+    <div className={`${openClass} ${!playerVisible && `translate-y-full`} absolute bottom-0 end-0 z-50 h-[90px] py-3 px-10 transition-transform duration-500`}>
       <div className="py-3 px-7 rounded-full relative flex items-center justify-between transition-all duration-500 select-none w-full h-full bg-(--main-bg) border-2 border-(--alt-text)">
         {streamUrl && <audio onTimeUpdate={playerHandler} ref={audioRef} className="hidden" src={streamUrl}></audio>}
         {/* Audio Info */}
@@ -67,7 +67,7 @@ const AudioPlayer = ({ openClass }: any) => {
         </div>
         {/* Exit */}
         <div className="h-full w-full flex justify-end items-center">
-          <CgClose onClick={() => setPlaying(false)} />
+          <CgClose onClick={() => setPlayerVisible(false)} />
         </div>
         {/* blur layer */}
         <div className="h-[60px] w-full absolute backdrop-blur-sm -bottom-10 start-0 -z-10" />

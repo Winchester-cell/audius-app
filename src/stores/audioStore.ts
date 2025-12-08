@@ -7,7 +7,9 @@ interface AudioStore {
     isPlaying: boolean,
     setPlaying: (value: boolean) => void
     track: Track | null,
-    setTrack: (value: Track) => void
+    setTrack: (value: Track) => void,
+    playerVisible: boolean,
+    setPlayerVisible: (value: boolean) => void,
 }
 
 export const useAudioStore = create<AudioStore>((set) => ({
@@ -16,5 +18,7 @@ export const useAudioStore = create<AudioStore>((set) => ({
     isPlaying: false,
     setPlaying: (newValue) => set(() => ({ isPlaying: newValue })),
     track: null,
-    setTrack: (newTrack) => set(() => ({ track: newTrack }))
+    setTrack: (newTrack) => set(() => ({ track: newTrack })),
+    playerVisible: false,
+    setPlayerVisible: (newValue) => set(() => ({ playerVisible: newValue }))
 }))
