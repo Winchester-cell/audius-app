@@ -1,73 +1,41 @@
 'use client'
+import useMusicImage from "@/hooks/useMusicImage"
+import usePlayerHandlers from "@/hooks/usePlayerHandlers"
 import { useAudioStore } from "@/stores/audioStore"
-import { extractContentId } from "@/utils/extractContentID"
-import { useEffect, useRef, useState } from "react"
-import { CgClose } from "react-icons/cg"
-import { FaBackward, FaForward, FaPause, FaPlay } from "react-icons/fa"
+import { useRef } from "react"
+import TrackInfo from "./AudioComponents/TrackInfo"
+import Controls from "./AudioComponents/Controls"
+import Options from "./AudioComponents/Options"
 
 const AudioPlayer = ({ openClass }: any) => {
 
-  const { track, streamUrl, isPlaying, setPlaying , playerVisible , setPlayerVisible } = useAudioStore()
-  const [progressPercent, setProgressPercent] = useState<number | null>(null)
+  const { track, streamUrl, playerVisible } = useAudioStore()
+  const imageUrl = useMusicImage({ baseImage: track && track.artwork["150x150"], imageSize: '150x150' })
   const audioRef = useRef<HTMLAudioElement>(null)
+  const progressRef = useRef<HTMLDivElement>(null)
+  const progressMobileRef = useRef<HTMLDivElement>(null)
 
-  const imageBaseUrl = `https://audius-discovery-7.cultur3stake.com/content`
-  const artWorkID = track ? extractContentId(track.artwork["150x150"]) : null
-  const artSize = `150x150`
-
-  // handle play or pause the audio :)
-  useEffect(() => {
-    isPlaying ? audioRef.current?.play() : audioRef.current?.pause()
-  }, [isPlaying])
-  // handle url change
-  useEffect(() => {
-    if (!audioRef.current) return
-    setProgressPercent(0)
-    audioRef.current.load()
-    if (isPlaying) audioRef.current.play()
-  }, [streamUrl])
-
-
-  const playerHandler = () => {
-    if (audioRef.current) {
-      const currentTimePercent = audioRef.current.currentTime / audioRef.current.duration * 100
-      setProgressPercent(currentTimePercent)
-    }
-  }
+  const {
+    exitHandler, seekHandler , seekHandlerMobile, playerHandler, currentTrackMinutes,
+    currentTrackSecond, trackMinutes, trackSecond, progressPercent
+  } = usePlayerHandlers({ audioRef, progressRef , progressMobileRef })
 
   return (
-    <div className={`${openClass} ${!playerVisible && `translate-y-full`} absolute bottom-0 end-0 z-50 h-[90px] py-3 px-10 transition-transform duration-500`}>
-      <div className="py-3 px-7 rounded-full relative flex items-center justify-between transition-all duration-500 select-none w-full h-full bg-(--main-bg) border-2 border-(--alt-text)">
+    <div className={`${openClass} ${!playerVisible && `translate-y-full`} absolute bottom-0 end-0 z-50 h-[110px] lg:h-[90px] py-3 px-5 lg:px-10 transition-transform duration-500`}>
+      <div className="py-3 px-4 lg:px-7 rounded-3xl lg:rounded-full relative grid grid-cols-[110px_1fr] lg:flex lg:items-center lg:justify-between lg:gap-5 transition-all duration-500 select-none w-full h-full bg-(--main-bg) border-[3px] border-(--alt-text)">
+        {/* Audio tag */}
         {streamUrl && <audio onTimeUpdate={playerHandler} ref={audioRef} className="hidden" src={streamUrl}></audio>}
-        {/* Audio Info */}
-        <div className="h-full w-full flex gap-2 items-center">
-          {
-            track &&
-            <>
-              <img className="h-full w-auto rounded-lg" src={`${imageBaseUrl}/${artWorkID}/${artSize}`} alt="" />
-              <div>
-                <div className="font-semibold text-(--colored-text) line-clamp-1">{track.title}</div>
-                <div className="text-[10px] line-clamp-1">{track.user.name}</div>
-              </div>
-            </>
-          }
-        </div>
+        {/* Track info */}
+        <TrackInfo track={track} imageUrl={imageUrl} />
         {/* Player Controls */}
-        <div className="h-full w-full flex flex-col justify-center items-center mt-1">
-          {/* media controls */}
-          <div className="flex items-center gap-5">
-            <FaBackward onClick={() => audioRef.current && (audioRef.current.currentTime -= 10)} />
-            {isPlaying ? <FaPause onClick={() => setPlaying(false)} /> : <FaPlay onClick={() => setPlaying(true)} />}
-            <FaForward onClick={() => audioRef.current && (audioRef.current.currentTime += 10)} />
-          </div>
-          {/* progress bar */}
-          <div className="w-full h-2.5 px-1 flex items-center rounded-full mt-2 bg-(--bars-color)">
-            <div style={{ width: `${progressPercent}%` }} className="h-[3px] bg-(--colored-text) rounded-full"></div>
-          </div>
+        <div className="hidden lg:block w-full">
+          <Controls audioRef={audioRef} progressRef={progressRef} seekHandler={seekHandler} progressPercent={progressPercent} />
         </div>
-        {/* Exit */}
-        <div className="h-full w-full flex justify-end items-center">
-          <CgClose onClick={() => setPlayerVisible(false)} />
+        {/* options */}
+        <Options exitHandler={exitHandler} currentTrackMinutes={currentTrackMinutes} currentTrackSecond={currentTrackSecond} trackMinutes={trackMinutes} trackSecond={trackSecond} />
+        {/* progressbar mobile */}
+        <div onClick={seekHandlerMobile} ref={progressMobileRef} className="col-span-2 cursor-pointer flex lg:hidden w-full h-2 px-1 items-center mt-2 rounded-full bg-(--bars-color)">
+          <div style={{ width: `${progressPercent}%` }} className="h-[3px] bg-(--colored-text) rounded-full"></div>
         </div>
         {/* blur layer */}
         <div className="h-[60px] w-full absolute backdrop-blur-sm -bottom-10 start-0 -z-10" />

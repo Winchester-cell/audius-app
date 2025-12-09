@@ -9,7 +9,7 @@ const ProfileSection = () => {
             <div className="w-[38px] h-[38px] rounded-full overflow-hidden">
                 <img className="w-full h-full object-cover" src="https://ucarecdn.com/7f0cc399-b5f2-4d7d-8157-e3c75d125e79/-/preview/1000x1000/" alt="" />
             </div>
-            <div className="font-semibold">Reza</div>
+            {/* <div className="font-semibold">Reza</div> */}
         </div>
     )
 }

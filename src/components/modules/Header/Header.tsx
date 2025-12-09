@@ -1,13 +1,15 @@
-import { BsFillBellFill, BsFillChatFill } from "react-icons/bs";
 import Logo from "../Logo/Logo";
 import ProfileSection from "./ProfileSection";
 import LoginLogoutArea from "../Controls/LoginLogout";
 import TextInput from "../Inputs/TextInputs";
 import { BiSearchAlt2 } from "react-icons/bi";
 import ThemeToggle from "../Controls/ThemeToggle";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { useSideBarStore } from "@/stores/sideBarStore";
 
 export default function Header() {
 
+  const { setSideBarOpen } = useSideBarStore()
 
   return (
     <div className="w-full">
@@ -21,8 +23,11 @@ export default function Header() {
           </div>
           <TextInput icon={BiSearchAlt2} inputID="searchbar" place="Search ..." containerClass="py-2 gap-2" />
           <ProfileSection />
-          <div className="-ms-3"><LoginLogoutArea /></div>
+          <div className="-ms-2"><LoginLogoutArea /></div>
         </div>
+        <button className="lg:hidden" onClick={() => setSideBarOpen(true)}>
+          <GiHamburgerMenu className="size-6" />
+        </button>
       </div>
     </div>
   )
