@@ -56,6 +56,4 @@ const TrackCard: FC<Track> = (props) => {
     )
 }
 
-TrackCard.whyDidYouRender = true
-
 export default memo(TrackCard)

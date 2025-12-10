@@ -1,7 +1,7 @@
 import useMusicImage from "@/hooks/useMusicImage"
 import { Playlist } from "@/types/playlist.type"
 import Link from "next/link"
-import { FC, use } from "react"
+import { FC } from "react"
 import { AiOutlineUser } from "react-icons/ai"
 import { CiHeart } from "react-icons/ci"
 
