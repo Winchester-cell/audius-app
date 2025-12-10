@@ -5,7 +5,7 @@ import { CgPlayList } from 'react-icons/cg'
 
 const TrendingPlaylistBox = () => {
 
-    const { data } = useTrendingPlaylists('limit=20')
+    const { data } = useTrendingPlaylists('limit=10')
 
     return (
         <CardBox sectionTitle='Trending Playlists' buttonTitle='View all' icon={CgPlayList} >

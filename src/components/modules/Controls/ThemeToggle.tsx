@@ -8,7 +8,7 @@ const ThemeToggle = () => {
     const { theme, setTheme } = useTheme()
 
     return (
-        <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="transition-all duration-500 hover:scale-[1.2] hover:text-(--hover-color) cursor-pointer">
+        <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="transition-[scale,color] duration-500 hover:scale-[1.1] hover:text-(--hover-color) cursor-pointer">
             {
                 theme === 'dark' ? (
                     <BsSunFill className="size-4" />

@@ -2,7 +2,7 @@
 import useMusicImage from "@/hooks/useMusicImage"
 import usePlayerHandlers from "@/hooks/usePlayerHandlers"
 import { useAudioStore } from "@/stores/audioStore"
-import { useRef } from "react"
+import { memo, useRef } from "react"
 import TrackInfo from "./AudioComponents/TrackInfo"
 import Controls from "./AudioComponents/Controls"
 import Options from "./AudioComponents/Options"
@@ -16,13 +16,13 @@ const AudioPlayer = ({ openClass }: any) => {
   const progressMobileRef = useRef<HTMLDivElement>(null)
 
   const {
-    exitHandler, seekHandler , seekHandlerMobile, playerHandler, currentTrackMinutes,
+    exitHandler, seekHandler, seekHandlerMobile, playerHandler, currentTrackMinutes,
     currentTrackSecond, trackMinutes, trackSecond, progressPercent
-  } = usePlayerHandlers({ audioRef, progressRef , progressMobileRef })
+  } = usePlayerHandlers({ audioRef, progressRef, progressMobileRef })
 
   return (
     <div className={`${openClass} ${!playerVisible && `translate-y-full`} absolute bottom-0 end-0 z-50 h-[110px] lg:h-[90px] py-3 px-5 lg:px-10 transition-transform duration-500`}>
-      <div className="py-3 px-4 lg:px-7 rounded-3xl lg:rounded-full relative grid grid-cols-[110px_1fr] lg:flex lg:items-center lg:justify-between lg:gap-5 transition-all duration-500 select-none w-full h-full bg-(--main-bg) border-[3px] border-(--alt-text)">
+      <div className="py-3 px-4 lg:px-7 rounded-3xl lg:rounded-full relative grid grid-cols-[110px_1fr] lg:flex lg:items-center lg:justify-between lg:gap-5 duration-500 select-none w-full h-full bg-(--main-bg) border-[3px] border-(--alt-text)">
         {/* Audio tag */}
         {streamUrl && <audio onTimeUpdate={playerHandler} ref={audioRef} className="hidden" src={streamUrl}></audio>}
         {/* Track info */}
@@ -44,4 +44,4 @@ const AudioPlayer = ({ openClass }: any) => {
   )
 }
 
-export default AudioPlayer 
+export default memo(AudioPlayer)  

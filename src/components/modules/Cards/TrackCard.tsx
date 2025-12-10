@@ -2,7 +2,7 @@ import useMusicImage from "@/hooks/useMusicImage"
 import { useAudioStore } from "@/stores/audioStore"
 import { Track } from "@/types/tracks.type"
 import Link from "next/link"
-import { FC } from "react"
+import { FC, memo } from "react"
 import { AiOutlineUser } from "react-icons/ai"
 import { CiHeart, CiPlay1 } from "react-icons/ci"
 
@@ -10,10 +10,16 @@ import { CiHeart, CiPlay1 } from "react-icons/ci"
 
 const TrackCard: FC<Track> = (props) => {
 
+    console.log("Rendering TrackCard:", props.id)
+
     const { id, title, user, artwork } = props
     const artWorkImage = useMusicImage({ baseImage: artwork && artwork["150x150"], imageSize: '150x150' })
     const userProfileImage = useMusicImage({ baseImage: user.profile_picture && user.profile_picture["150x150"], imageSize: '150x150' })
-    const { setTrack, setStreamUrl, setPlaying, setPlayerVisible } = useAudioStore()
+
+    const setTrack = useAudioStore(state => state.setTrack)
+    const setStreamUrl = useAudioStore(state => state.setStreamUrl)
+    const setPlaying = useAudioStore(state => state.setPlaying)
+    const setPlayerVisible = useAudioStore(state => state.setPlayerVisible)
 
     const playHandler = () => {
         setPlayerVisible(true)
@@ -50,4 +56,6 @@ const TrackCard: FC<Track> = (props) => {
     )
 }
 
-export default TrackCard
+TrackCard.whyDidYouRender = true
+
+export default memo(TrackCard)

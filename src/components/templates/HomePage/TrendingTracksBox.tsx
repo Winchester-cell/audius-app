@@ -5,12 +5,12 @@ import { IoMdMusicalNote } from 'react-icons/io'
 
 const TrendingTracksBox = () => {
 
-    const { data } = useTrendingTracks('limit=20')
+    const { data } = useTrendingTracks('limit=10')
 
     return (
         <CardBox sectionTitle='Trending Tracks' buttonTitle='View all' icon={IoMdMusicalNote} >
             {
-                data && data.data.map(track => <TrackCard key={track.id} {...track} />)
+                data && data.data.map((track , index) => <TrackCard key={track.id} {...track} />)
             }
         </CardBox>
     )

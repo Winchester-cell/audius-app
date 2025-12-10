@@ -31,7 +31,7 @@ const MainLayout: FC<PropsWithChildren> = ({ children }) => {
         <div className={`w-full container-c mx-auto relative neu__norm h-dvh overflow-hidden`}>
             <SideBar />
             <AudioPlayer openClass={openClass} />
-            <div className={`${openClass} transition-all duration-500 flex flex-col h-full overflow-y-auto`}>
+            <div className={`${openClass} transition-[width] duration-500 flex flex-col h-full overflow-y-auto`}>
                 <div className="p-5">
                     <Header />
                 </div>

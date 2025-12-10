@@ -5,7 +5,7 @@ const LoginLogoutArea = () => {
     return (
         <>
 
-            <div className="transition-all duration-500 hover:text-(--hover-color) cursor-pointer hover:scale-[1.2]">
+            <div className="transition-[scale,color] duration-500 hover:text-(--hover-color) cursor-pointer hover:scale-[1.2]">
                 <MdOutlineLogout className="size-4" />
             </div>
 
