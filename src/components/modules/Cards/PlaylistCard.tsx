@@ -21,7 +21,7 @@ const PlaylistCard: FC<Playlist> = ({ id, playlist_name, user, artwork }) => {
                     </div>
                 </div>
                 <div className="w-full h-full img_shadow rounded-t-2xl absolute z-20"></div>
-                {artWorkImage && <img className="w-full h-full object-cover shadow-inner absolute z-10" src={artWorkImage} alt="" />}
+                {artWorkImage && <img loading="lazy" className="w-full h-full object-cover shadow-inner absolute z-10" src={artWorkImage} alt="" />}
             </div>
             <div className="neu__norm rounded-b-2xl p-3">
                 <div className="block neu__norm p-3 rounded-xl h-[60px]">

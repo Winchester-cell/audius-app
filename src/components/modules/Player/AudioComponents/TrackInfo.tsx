@@ -13,8 +13,8 @@ const TrackInfo = ({ track, imageUrl }: TrackInfoProps) => {
                 <>
                     {imageUrl && <img className="h-full w-auto rounded-lg" src={imageUrl} alt="" />}
                     <div>
-                        <div className="text-[8px] lg:text-[12px] font-semibold text-(--colored-text) line-clamp-1">{track.title}</div>
-                        <div className="text-[6px] lg:text-[10px] line-clamp-1">{track.user.name}</div>
+                        <div className="text-[10px] lg:text-[12px] font-semibold text-(--colored-text) line-clamp-1">{track.title}</div>
+                        <div className="text-[8px] lg:text-[10px] line-clamp-1">{track.user.name}</div>
                     </div>
                 </>
             }

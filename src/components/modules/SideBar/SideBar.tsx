@@ -14,7 +14,7 @@ const SideBar = () => {
 
     return (
         <>
-            <div className={`absolute bg-(--main-bg) z-51 top-0 start-0 ${isSideBarCollapse ? 'w-[100px]' : 'w-[250px]'} ${isSideBarOpen ? '' : '-translate-x-full'} h-dvh neu__norm transition-[translate,width] duration-500 overflow-hidden`}>
+            <div className={`absolute bg-(--main-bg) z-51 top-0 start-0 ${isSideBarCollapse ? 'w-[100px]' : 'w-[250px]'} ${isSideBarOpen ? '' : '-translate-x-full'} h-dvh neu__norm transition-[translate] lg:transition-[translate,width] duration-500 overflow-hidden`}>
                 <SimpleBar className="h-dvh" >
                     <div className={`flex flex-col gap-5 ${isSideBarCollapse ? 'py-5 px-2' : 'p-5'}`}>
                         <div className={`flex gap-3 ${isSideBarCollapse ? 'justify-center' : 'justify-end'}`}>
