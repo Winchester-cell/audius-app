@@ -26,10 +26,10 @@ const TrackCard: FC<Track> = (props) => {
         <div className="select-none w-[150px] h-[250px] lg:w-[200px] lg:h-[300px] rounded-2xl flex flex-col hover:scale-[1.03] transition-transform duration-500 me-5">
             <div className="size-[150px] lg:size-[200px] rounded-t-2xl relative overflow-hidden">
                 <div className="absolute bottom-0 z-30 w-full p-2 flex items-center gap-2">
-                    <div className="w-fit p-1.5 cursor-pointer bg-[#00000021] rounded-full border-2 border-[#ffffff2e] backdrop-blur-[10px] text-white">
+                    <div className="w-fit p-1.5 cursor-pointer bg-[#00000041] rounded-full border-2 border-[#ffffff2e] backdrop-blur-[5px] text-white">
                         <CiHeart className="size-3 lg:size-4" />
                     </div>
-                    <div onClick={playHandler} className="w-fit p-1.5 cursor-pointer bg-[#00000021] rounded-full border-2 border-[#ffffff2e] backdrop-blur-[10px] text-white">
+                    <div onClick={playHandler} className="w-fit p-1.5 cursor-pointer bg-[#00000041] rounded-full border-2 border-[#ffffff2e] backdrop-blur-[5px] text-white">
                         <CiPlay1 className="size-3 lg:size-4" />
                     </div>
                 </div>
