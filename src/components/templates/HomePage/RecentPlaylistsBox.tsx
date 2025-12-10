@@ -5,7 +5,7 @@ import { CgPlayList } from 'react-icons/cg'
 
 const RecentPlaylistBox = () => {
 
-    const { data } = usePlaylists('limit=10&sort_method=recent')
+    const { data } = usePlaylists('limit=20&sort_method=recent')
 
     return (
         <CardBox sectionTitle='Recet Playlists' buttonTitle='View all' icon={CgPlayList} >

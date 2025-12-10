@@ -5,7 +5,7 @@ import { IoMdMusicalNote } from 'react-icons/io'
 
 const TrendingTracksBox = () => {
 
-    const { data } = useTrendingTracks('limit=10')
+    const { data } = useTrendingTracks('limit=20')
 
     return (
         <CardBox sectionTitle='Trending Tracks' buttonTitle='View all' icon={IoMdMusicalNote} >

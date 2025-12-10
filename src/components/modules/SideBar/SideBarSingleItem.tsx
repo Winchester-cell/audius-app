@@ -18,7 +18,7 @@ const SideBarSingleItem: FC<SidBarSingleItemProps> = ({ isSubmenu, text, icon: I
 
     return (
         <div>
-            <Link style={{ fontSize: fontSize }} href={href} className={`${href === pathname ? `text-(--navbar-active-route) font-bold` : `font-semibold`} ${isSideBarCollapse ? 'p-2 justify-center' : 'py-2 ps-5'} grow flex items-center  gap-1 neu__norm rounded-full  transition-all duration-500 hover:scale-[1.03]  hover:bg-(--hover-color) hover:text-white ${isSubmenu ? 'border-s-[3px] border-(--hover-color)' : ''}`}>
+            <Link style={{ fontSize: fontSize }} href={href} className={`${href === pathname ? `text-(--navbar-active-route) font-bold` : `font-semibold`} ${isSideBarCollapse ? 'p-2 justify-center' : 'py-2 ps-5'} grow flex items-center  gap-1 neu__norm rounded-full  transition-[scale,color,background-color] duration-500 hover:scale-[1.03]  hover:bg-(--hover-color) hover:text-white ${isSubmenu ? 'border-s-[3px] border-(--hover-color)' : ''}`}>
                 <Icon className={`${iconW} ${iconH}`} />
                 {
                     !isSideBarCollapse &&

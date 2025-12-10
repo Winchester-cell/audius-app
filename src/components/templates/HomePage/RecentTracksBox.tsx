@@ -5,7 +5,7 @@ import { IoMdMusicalNote } from 'react-icons/io'
 
 const RecentTracksBox = () => {
 
-    const { data } = useTracks('limit=10&sort_method=recent')
+    const { data } = useTracks('limit=20&sort_method=recent')
 
     return (
         <CardBox sectionTitle='Recent Tracks' buttonTitle='View all' icon={IoMdMusicalNote} >
