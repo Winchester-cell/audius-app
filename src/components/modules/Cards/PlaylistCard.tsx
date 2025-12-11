@@ -7,8 +7,6 @@ import { CiHeart } from "react-icons/ci"
 
 const PlaylistCard: FC<Playlist> = ({ id, playlist_name, user, artwork }) => {
   
-    console.log("Rendering PlayCard:", id)
-
     const artWorkImage = useMusicImage({ baseImage: artwork && artwork["150x150"], imageSize: '150x150' })
     const userProfileImage = useMusicImage({ baseImage: user.profile_picture && user.profile_picture["150x150"], imageSize: '150x150' })
 

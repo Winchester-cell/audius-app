@@ -6,14 +6,16 @@ import TrendingTracksBox from '@/components/templates/HomePage/TrendingTracksBox
 import { FC } from 'react'
 
 const Home: FC = () => {
+
   return (
     <div className='flex flex-col gap-5 w-full'>
-      {/* <TrendingTracksBox />
+      <TrendingTracksBox />
       <TrendingPlaylistBox />
       <RecentTracksBox />
-      <RecentPlaylistBox /> */}
+      <RecentPlaylistBox />
     </div>
   )
+
 }
 
 export default Home

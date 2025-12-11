@@ -11,9 +11,8 @@ const LoginLogoutArea = () => {
     return (
         <>
             <div className="transition-[scale,color] duration-500 hover:text-(--hover-color) cursor-pointer hover:scale-[1.2]">
-                {status}
                 {status === 'authenticated' && <MdOutlineLogout onClick={() => signOut()} className="size-4" />}
-                {status === 'unauthenticated' && <MdOutlineLogin onClick={() => signIn('google')} className="size-4" />}
+                {status === 'unauthenticated' && <MdOutlineLogin onClick={() => signIn('google', { prompt: "select_account" })} className="size-4" />}
             </div>
         </>
     )

@@ -10,8 +10,6 @@ import { CiHeart, CiPlay1 } from "react-icons/ci"
 
 const TrackCard: FC<Track> = (props) => {
 
-    console.log("Rendering TrackCard:", props.id)
-
     const { id, title, user, artwork } = props
     const artWorkImage = useMusicImage({ baseImage: artwork && artwork["150x150"], imageSize: '150x150' })
     const userProfileImage = useMusicImage({ baseImage: user.profile_picture && user.profile_picture["150x150"], imageSize: '150x150' })
