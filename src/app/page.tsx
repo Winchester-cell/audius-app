@@ -5,7 +5,7 @@ import TrendingPlaylistBox from '@/components/templates/HomePage/TrendingPlaylis
 import TrendingTracksBox from '@/components/templates/HomePage/TrendingTracksBox'
 import { FC } from 'react'
 
-const Home: FC = () => {
+const Home: FC = () => {  
 
   return (
     <div className='flex flex-col gap-5 w-full'>

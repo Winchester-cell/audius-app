@@ -30,12 +30,12 @@ const sideBarContent: Fields[] = [
             {
                 type: "single-item",
                 href: "/",
-                text: "Discover",
+                text: "Home",
                 icon: MdDashboard,
             },
             {
                 type: "single-item",
-                href: "#",
+                href: "/tracks",
                 text: "Tracks",
                 icon: IoMdMusicalNote,
             },

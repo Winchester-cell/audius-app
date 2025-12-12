@@ -2,12 +2,12 @@ import { PlaylistResponse } from "@/types/playlist.type"
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
 
-const usePlaylists = (searchParams: string , isInveiw:boolean) => {
+const usePlaylists = (endPoint: ('trending' | 'search') ,searchParams: string , isInveiw:boolean) => {
 
     const getPlaylists = async () => {
         
         try {
-            const res = await axios.get(`/api/proxy/playlists/search?${searchParams || ''}`)
+            const res = await axios.get(`/api/proxy/playlists/${endPoint}?${searchParams || ''}`)
             if (res.status === 200) {
                 return res.data
             }

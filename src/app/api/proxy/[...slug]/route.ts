@@ -4,8 +4,8 @@ import { NextRequest } from "next/server";
 export async function GET(req: NextRequest, { params }: any) {
     try {
         const paramsArry = await params
-        const fullEndPoint = `/${paramsArry.slug.join('/')}/`
-        console.log(fullEndPoint);
+        const searchString = req.nextUrl.search
+        const fullEndPoint = `/${paramsArry.slug.join('/')}${searchString}`
         const res = await mainApi.get(fullEndPoint)
         return Response.json(res.data, { status: 200 })
     } catch (err) {

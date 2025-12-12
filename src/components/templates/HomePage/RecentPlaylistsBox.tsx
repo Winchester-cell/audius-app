@@ -9,7 +9,7 @@ import { FaSadTear } from 'react-icons/fa'
 const RecentPlaylistBox = () => {
 
     const { elemRef, isInview } = useInView()
-    const { data, isError, isPending, refetch } = usePlaylists('limit=20&sort_method=recent', isInview)
+    const { data, isError, isPending, refetch } = usePlaylists('search', 'limit=20&sort_method=recent', isInview)
 
     return (
         <div className={`${isInview ? 'opacity-100' : 'opacity-0'} duration-500 transition-opacity`} ref={elemRef}>

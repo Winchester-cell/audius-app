@@ -12,7 +12,6 @@ interface SectionCardProps {
 
 const CardBox: FC<SectionCardProps> = ({ sectionTitle, buttonTitle, children, icon: Icon }) => {
 
-
     const scrollRef = useRef<HTMLDivElement>(null)
 
     const scrollBack = () => {
@@ -43,7 +42,7 @@ const CardBox: FC<SectionCardProps> = ({ sectionTitle, buttonTitle, children, ic
                 {/* card container */}
                 <div className='neu__inner mt-5 rounded-2xl p-1 lg:px-5 lg:py-3 w-full overflow-hidden'>
                     <SimpleBar scrollableNodeProps={{ ref: scrollRef, className: 'smoothScroll' }} style={{ width: '100%' }}>
-                        <div className="flex py-2 px-2">
+                        <div className="flex py-2 px-2 gap-5">
                             {children}
                         </div>
                     </SimpleBar>

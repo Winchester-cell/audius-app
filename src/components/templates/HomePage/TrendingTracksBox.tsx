@@ -1,7 +1,7 @@
 import CardBox from '@/components/modules/Cards/CardBox'
 import TrackCard from '@/components/modules/Cards/TrackCard'
 import SpinnerLoading from '@/components/modules/Loadings/SpinnerLoading'
-import useTrendingTracks from '@/hooks/queryHooks/useTrendingTracks'
+import useTracks from '@/hooks/queryHooks/useTracks'
 import useInView from '@/hooks/useInView'
 import { FaSadTear } from 'react-icons/fa'
 import { IoMdMusicalNote } from 'react-icons/io'
@@ -9,7 +9,7 @@ import { IoMdMusicalNote } from 'react-icons/io'
 const TrendingTracksBox = () => {
 
     const { elemRef, isInview } = useInView()
-    const { data, isPending, isError, refetch } = useTrendingTracks('limit=20', isInview)
+    const { data, isPending, isError, refetch } = useTracks('trending', 'limit=20', isInview)
 
     return (
         <div className={`${isInview ? 'opacity-100' : 'opacity-0'} duration-500 transition-opacity`} ref={elemRef}>

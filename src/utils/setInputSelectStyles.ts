@@ -14,7 +14,8 @@ export const setInputSelectInputStyles = ({ padding, menuWidth }: InputStylesEnt
             background: 'var(--main-bg)',
             padding: padding,
             borderRadius: '25px',
-            boxShadow: '2px 2px 7px var(--shadow-dark),-4px -4px 5px var(--shadow-light)'
+            boxShadow: '2px 2px 7px var(--shadow-dark),-4px -4px 5px var(--shadow-light)',
+            zIndex:99999
         }),
         multiValue: (styles) => ({
             ...styles,

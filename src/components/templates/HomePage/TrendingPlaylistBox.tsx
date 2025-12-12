@@ -1,7 +1,7 @@
 import CardBox from '@/components/modules/Cards/CardBox'
 import PlaylistCard from '@/components/modules/Cards/PlaylistCard'
 import SpinnerLoading from '@/components/modules/Loadings/SpinnerLoading'
-import useTrendingPlaylists from '@/hooks/queryHooks/useTrendingPlaylists'
+import usePlaylists from '@/hooks/queryHooks/usePlaylists'
 import useInView from '@/hooks/useInView'
 import { CgPlayList } from 'react-icons/cg'
 import { FaSadTear } from 'react-icons/fa'
@@ -9,7 +9,7 @@ import { FaSadTear } from 'react-icons/fa'
 const TrendingPlaylistBox = () => {
 
     const { elemRef, isInview } = useInView()
-    const { data, isPending, isError, refetch } = useTrendingPlaylists('limit=20', isInview)
+    const { data, isPending, isError, refetch } = usePlaylists('trending', 'limit=20', isInview)
 
     return (
         <div className={`${isInview ? 'opacity-100' : 'opacity-0'} duration-500 transition-opacity`} ref={elemRef}>

@@ -27,7 +27,7 @@ const TrackCard: FC<Track> = (props) => {
     }
 
     return (
-        <div className="select-none w-[150px] h-[250px] lg:w-[200px] lg:h-[300px] rounded-2xl flex flex-col hover:scale-[1.03] transition-transform duration-500 me-5">
+        <div className="select-none w-[150px] h-[250px] lg:w-[200px] lg:h-[300px] rounded-2xl flex flex-col hover:scale-[1.03] transition-transform duration-500">
             <div className="size-[150px] lg:size-[200px] rounded-t-2xl relative overflow-hidden">
                 <div className="absolute bottom-0 z-30 w-full p-2 flex items-center gap-2">
                     <div className="w-fit p-1.5 cursor-pointer bg-[#00000041] rounded-full border-2 border-[#ffffff2e] backdrop-blur-[5px] text-white">
@@ -38,7 +38,7 @@ const TrackCard: FC<Track> = (props) => {
                     </div>
                 </div>
                 <div className="w-full h-full img_shadow rounded-t-2xl absolute z-20"></div>
-                {artWorkImage && <img loading="lazy" className="w-full h-full object-cover shadow-inner absolute z-10" src={artWorkImage} alt="" />}
+                {artWorkImage && <img loading="lazy" className="size-full object-cover shadow-inner absolute z-10" src={artWorkImage} alt="" />}
             </div>
             <div className="neu__norm rounded-b-2xl p-3">
                 <div className="block neu__norm p-3 rounded-xl h-[60px]">

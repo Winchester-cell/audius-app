@@ -4,8 +4,8 @@ const useInView = () => {
 
     const elemRef = useRef(null)
     const [isInview, setIsInview] = useState<boolean>(false)
-
     useEffect(() => {
+        if (!elemRef.current) return
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
                 setIsInview(true)
@@ -13,6 +13,7 @@ const useInView = () => {
             }
         })
         if (elemRef.current) observer.observe(elemRef.current)
+        return () => observer.disconnect();
     }, [])
 
     return { isInview, elemRef }
