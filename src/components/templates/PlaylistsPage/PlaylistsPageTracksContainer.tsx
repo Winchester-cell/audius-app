@@ -1,31 +1,31 @@
-import TrackCard from "@/components/modules/Cards/TrackCard"
+import PlaylistCard from "@/components/modules/Cards/PlaylistCard"
 import SpinnerLoading from "@/components/modules/Loadings/SpinnerLoading"
-import useTracks from "@/hooks/queryHooks/useTracks"
+import usePlaylists from "@/hooks/queryHooks/usePlaylists"
 import useScrollPagination from "@/hooks/useScrollPagination"
-import { Track } from "@/types/tracks.type"
+import { Playlist } from "@/types/playlist.type"
 import { getEndPoint } from "@/utils/formatters/getEndpoint"
 import { Dispatch, FC, SetStateAction, useEffect, useState } from "react"
 
-interface TracksPageTracksContainerProps {
-    tracks: Track[],
-    setTracks: Dispatch<SetStateAction<Track[]>>
+interface PlaylistsContainerProps {
+    playlists: Playlist[],
+    setPlaylists: Dispatch<SetStateAction<Playlist[]>>
     filterValue: string
 }
 
-const TracksPageTracksContainer: FC<TracksPageTracksContainerProps> = ({ tracks, setTracks, filterValue }) => {
+const PlaylistsPageContainer: FC<PlaylistsContainerProps> = ({ playlists, setPlaylists, filterValue }) => {
 
     const queryInfo = getEndPoint(filterValue)
-    const {isPending} = useScrollPagination<Track>({
-        setData:setTracks ,
-        fetchHook:(page) => useTracks((queryInfo?.endpoint) as ('trending' | 'search') , `limit=50&offset=${(page - 1) * 50}&${queryInfo?.searchparams}`, true)
+    const {isPending} = useScrollPagination<Playlist>({
+        setData:setPlaylists ,
+        fetchHook:(page) => usePlaylists((queryInfo?.endpoint) as ('trending' | 'search') , `limit=50&offset=${(page - 1) * 50}&${queryInfo?.searchparams}`, true)
     })
 
     return (
         <>
             {
-                (tracks && tracks.length !== 0) &&
+                (playlists && playlists.length !== 0) &&
                 <div className="flex items-center flex-wrap justify-center gap-5 neu__norm mt-5 py-5 lg:py-10 rounded-3xl">
-                    {tracks.map((track, index) => <TrackCard key={index} {...track} />)}
+                    {playlists.map((playlists, index) => <PlaylistCard key={index} {...playlists} />)}
                 </div>
             }
             {
@@ -38,4 +38,4 @@ const TracksPageTracksContainer: FC<TracksPageTracksContainerProps> = ({ tracks,
     )
 }
 
-export default TracksPageTracksContainer
+export default PlaylistsPageContainer

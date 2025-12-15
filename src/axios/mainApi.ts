@@ -1,4 +1,4 @@
-import { getAudiusHost } from "@/utils/getAudiusHost";
+import { getAudiusHost } from "@/utils/api/getAudiusHost";
 import axios from "axios";
 
 const hostAddress = await getAudiusHost()

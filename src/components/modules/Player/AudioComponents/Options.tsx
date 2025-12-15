@@ -1,5 +1,5 @@
 import { useAudioStore } from '@/stores/audioStore'
-import { formatTimer } from '@/utils/formatTimer'
+import { formatTimer } from '@/utils/formatters/formatTimer'
 import Link from 'next/link'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { CgClose } from 'react-icons/cg'

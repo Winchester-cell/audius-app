@@ -1,4 +1,4 @@
-import { getViewPortWidth } from '@/utils/getViewPortW'
+import { getViewPortWidth } from '@/utils/ui/getViewPortW'
 import { create } from 'zustand'
 
 interface SideBarStore {

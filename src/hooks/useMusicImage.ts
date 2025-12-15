@@ -1,4 +1,4 @@
-import { extractContentId } from "@/utils/extractContentID"
+import { extractContentId } from "@/utils/formatters/extractContentID"
 import { FC } from "react"
 
 interface UseMusicImageProps {

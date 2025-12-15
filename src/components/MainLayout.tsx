@@ -4,7 +4,7 @@ import SideBar from "./modules/SideBar/SideBar"
 import { usePathname } from "next/navigation"
 import Header from "./modules/Header/Header"
 import { useSideBarStore } from "@/stores/sideBarStore"
-import { getViewPortWidth } from "@/utils/getViewPortW"
+import { getViewPortWidth } from "@/utils/ui/getViewPortW"
 import AudioPlayer from "./modules/Player/AudioPlayer"
 import { useScrollStore } from "@/stores/scrollStore"
 

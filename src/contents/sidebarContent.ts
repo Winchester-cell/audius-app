@@ -41,13 +41,13 @@ const sideBarContent: Fields[] = [
             },
             {
                 type: "single-item",
-                href: "#",
+                href: "/playlists",
                 text: "Playlists",
                 icon: CgPlayList,
             },
             {
                 type: "single-item",
-                href: "#",
+                href: "/genres",
                 text: "Genres",
                 icon: MdQueueMusic,
             },
