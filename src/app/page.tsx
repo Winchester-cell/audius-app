@@ -3,9 +3,18 @@ import RecentPlaylistBox from '@/components/templates/HomePage/RecentPlaylistsBo
 import RecentTracksBox from '@/components/templates/HomePage/RecentTracksBox'
 import TrendingPlaylistBox from '@/components/templates/HomePage/TrendingPlaylistBox'
 import TrendingTracksBox from '@/components/templates/HomePage/TrendingTracksBox'
-import { FC } from 'react'
+import { useSession } from 'next-auth/react'
+import { FC, useEffect } from 'react'
 
-const Home: FC = () => {  
+const Home: FC = () => {
+
+  const { data } = useSession()
+
+  useEffect(() => {
+    if (data) {
+      console.log(data.user.id);
+    }
+  }, [data])
 
   return (
     <div className='flex flex-col gap-5 w-full'>

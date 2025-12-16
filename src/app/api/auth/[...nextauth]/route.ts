@@ -1,5 +1,6 @@
 import NextAuth, { AuthOptions } from "next-auth"
 import Google from "next-auth/providers/google"
+import { randomUUID } from "crypto"
 
 const authOptions: AuthOptions = {
     providers: [
@@ -15,6 +16,24 @@ const authOptions: AuthOptions = {
             }
         })
     ],
+    session: {
+        strategy: 'jwt'
+    },
+    callbacks: {
+        async jwt({ token, account }) {
+            if (account && !token.id) {
+                token.id = randomUUID()
+            }
+            return token
+        },
+
+        async session({ session, token }) {
+            if (session.user) {
+                session.user.id = token.id as string
+            }
+            return session
+        },
+    },
     secret: process.env.NEXTAUTH_SECRET
 }
 
