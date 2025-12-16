@@ -20,9 +20,9 @@ const authOptions: AuthOptions = {
         strategy: 'jwt'
     },
     callbacks: {
-        async jwt({ token, account }) {
-            if (account && !token.id) {
-                token.id = randomUUID()
+        async jwt({ token, profile ,account }) {
+            if (profile && account) {
+                token.id = profile.sub
             }
             return token
         },
