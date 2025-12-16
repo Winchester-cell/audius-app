@@ -20,6 +20,7 @@ const PlaylistsPage = () => {
             <PageTitleSection icon={CgPlayList} title='Playlists' description='Browse playlists by trending , popular or recent' >
                 <SelectInput
                     onChangeHandler={(selected) => {
+                        if(selected.value === filterValue) return
                         setPlaylists([])
                         setFilterValue(selected.value)
                     }}

@@ -21,6 +21,7 @@ const TrackPage = () => {
             <PageTitleSection icon={IoMdMusicalNote} title={`${genre ? genre : ''} Tracks`} description="Browse tracks by trending , popular or recent" >
                 <SelectInput
                     onChangeHandler={(selected) => {
+                        if (selected.value === filterValue) return
                         setTracks([])
                         setFilterValue(selected.value)
                     }}

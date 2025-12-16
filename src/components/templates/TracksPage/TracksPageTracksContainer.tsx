@@ -19,7 +19,7 @@ const TracksPageTracksContainer: FC<TracksPageTracksContainerProps> = ({ tracks,
     const queryInfo = getEndPoint(filterValue)
     const { isPending } = useScrollPagination<Track>({
         setData: setTracks,
-        fetchHook: (page) => useTracks((queryInfo?.endpoint) as ('trending' | 'search'), `limit=50&offset=${(page - 1) * 50}&${genre ? 'genre=' + genre : ''}&${queryInfo?.searchparams}`, true)
+        fetchHook: (page) => useTracks((queryInfo?.endpoint) as ('trending' | 'search'), `limit=50&offset=${(page - 1) * 50}${genre ? '&genre=' + genre : ''}${queryInfo?.searchparams ? `&${queryInfo.searchparams}` : ''}`, true)
     })
 
     return (
