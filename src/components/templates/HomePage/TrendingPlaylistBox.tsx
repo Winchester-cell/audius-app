@@ -13,7 +13,7 @@ const TrendingPlaylistBox = () => {
 
     return (
         <div className={`${isInview ? 'opacity-100' : 'opacity-0'} duration-500 transition-opacity`} ref={elemRef}>
-            <CardBox sectionTitle='Trending Playlists' buttonTitle='View all' icon={CgPlayList} >
+            <CardBox allHref='/playlists' sectionTitle='Trending Playlists' buttonTitle='View all' icon={CgPlayList} >
                 {
                     isPending &&
                     <div className='flex w-full justify-center items-center h-[150px]'>

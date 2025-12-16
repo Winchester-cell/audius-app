@@ -13,7 +13,7 @@ const RecentTracksBox = () => {
 
     return (
         <div className={`${isInview ? 'opacity-100' : 'opacity-0'} duration-500 transition-opacity`} ref={elemRef}>
-            <CardBox sectionTitle='Recent Tracks' buttonTitle='View all' icon={IoMdMusicalNote} >
+            <CardBox allHref='/tracks?sort=recent' sectionTitle='Recent Tracks' buttonTitle='View all' icon={IoMdMusicalNote} >
                 {
                     isPending &&
                     <div className='flex w-full justify-center items-center h-[150px]'>

@@ -14,7 +14,7 @@ const MusicGenreBox = ({ genreName }: { genreName: string }) => {
 
     return (
         <div className={`${isInview ? 'opacity-100' : 'opacity-0'} duration-500 transition-opacity`} ref={elemRef}>
-            <CardBox sectionTitle={genreName} buttonTitle='View all' icon={MdQueueMusic} >
+            <CardBox allHref={`/tracks?genre=${genreName}`} sectionTitle={genreName} buttonTitle='View all' icon={MdQueueMusic} >
                 {
                     isPending &&
                     <div className='flex w-full justify-center items-center h-[150px]'>

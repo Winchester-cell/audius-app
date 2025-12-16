@@ -4,6 +4,7 @@ import useTracks from "@/hooks/queryHooks/useTracks"
 import useScrollPagination from "@/hooks/useScrollPagination"
 import { Track } from "@/types/tracks.type"
 import { getEndPoint } from "@/utils/formatters/getEndpoint"
+import { useSearchParams } from "next/navigation"
 import { Dispatch, FC, SetStateAction, useEffect, useState } from "react"
 
 interface TracksPageTracksContainerProps {
@@ -14,10 +15,11 @@ interface TracksPageTracksContainerProps {
 
 const TracksPageTracksContainer: FC<TracksPageTracksContainerProps> = ({ tracks, setTracks, filterValue }) => {
 
+    const genre = useSearchParams().get('genre')
     const queryInfo = getEndPoint(filterValue)
-    const {isPending} = useScrollPagination<Track>({
-        setData:setTracks ,
-        fetchHook:(page) => useTracks((queryInfo?.endpoint) as ('trending' | 'search') , `limit=50&offset=${(page - 1) * 50}&${queryInfo?.searchparams}`, true)
+    const { isPending } = useScrollPagination<Track>({
+        setData: setTracks,
+        fetchHook: (page) => useTracks((queryInfo?.endpoint) as ('trending' | 'search'), `limit=50&offset=${(page - 1) * 50}&${genre ? 'genre=' + genre : ''}&${queryInfo?.searchparams}`, true)
     })
 
     return (

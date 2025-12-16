@@ -4,14 +4,16 @@ import PageTitleSection from '@/components/modules/PageTitleSection/PageTitleSec
 import PlaylistsPageContainer from '@/components/templates/PlaylistsPage/PlaylistsPageTracksContainer'
 import { tracksPageFilterOptions } from '@/contents/reactSelectOptions'
 import { Playlist } from '@/types/playlist.type'
+import { useSearchParams } from 'next/navigation'
 import { useState } from 'react'
 import { CgPlayList } from 'react-icons/cg'
 import { FaSlidersH } from 'react-icons/fa'
 
 const PlaylistsPage = () => {
 
+    const sort = useSearchParams().get('sort')
     const [playlists, setPlaylists] = useState<Playlist[]>([])
-    const [filterValue, setFilterValue] = useState<string>('trending')
+    const [filterValue, setFilterValue] = useState<string>(sort ? sort : 'trending')
 
     return (
         <>

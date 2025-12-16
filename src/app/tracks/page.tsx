@@ -4,19 +4,21 @@ import PageTitleSection from "@/components/modules/PageTitleSection/PageTitleSec
 import TracksPageTracksContainer from "@/components/templates/TracksPage/TracksPageTracksContainer"
 import { tracksPageFilterOptions } from "@/contents/reactSelectOptions"
 import { Track } from "@/types/tracks.type"
-import { useState } from "react"
+import { useSearchParams } from "next/navigation"
+import { useEffect, useState } from "react"
 import { FaSlidersH } from "react-icons/fa"
 import { IoMdMusicalNote } from "react-icons/io"
 
 
 const TrackPage = () => {
-
+    const genre = useSearchParams().get('genre')
+    const sort = useSearchParams().get('sort')
     const [tracks, setTracks] = useState<Track[]>([])
-    const [filterValue, setFilterValue] = useState<string>('trending')
+    const [filterValue, setFilterValue] = useState<string>(sort ? sort : 'trending')
 
     return (
         <>
-            <PageTitleSection icon={IoMdMusicalNote} title="Tracks" description="Browse tracks by trending , popular or recent" >
+            <PageTitleSection icon={IoMdMusicalNote} title={`${genre ? genre : ''} Tracks`} description="Browse tracks by trending , popular or recent" >
                 <SelectInput
                     onChangeHandler={(selected) => {
                         setTracks([])

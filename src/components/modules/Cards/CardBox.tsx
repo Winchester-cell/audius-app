@@ -1,3 +1,4 @@
+import Link from "next/link"
 import React, { FC, ReactNode, useRef } from "react"
 import { IoChevronBack, IoChevronForward } from "react-icons/io5"
 import SimpleBar from "simplebar-react"
@@ -5,12 +6,13 @@ import SimpleBar from "simplebar-react"
 interface SectionCardProps {
     sectionTitle: string,
     buttonTitle: string,
+    allHref?:string,
     icon?: React.ElementType,
     children?: ReactNode
 }
 
 
-const CardBox: FC<SectionCardProps> = ({ sectionTitle, buttonTitle, children, icon: Icon }) => {
+const CardBox: FC<SectionCardProps> = ({ sectionTitle, buttonTitle , allHref, children, icon: Icon }) => {
 
     const scrollRef = useRef<HTMLDivElement>(null)
 
@@ -32,7 +34,7 @@ const CardBox: FC<SectionCardProps> = ({ sectionTitle, buttonTitle, children, ic
                     {Icon && <Icon className={`size-5 lg:size-8 mt-0.5`} />}
                     {sectionTitle}
                 </h2>
-                <span className='text-(--alt-text) neu__norm rounded-full py-2 lg:py-3 px-5 lg:px-7 text-[10px] lg:text-[12px]'>{buttonTitle}</span>
+                <Link href={allHref ? allHref : '#'} className='text-(--alt-text) neu__norm rounded-full py-2 lg:py-3 px-5 lg:px-7 text-[10px] lg:text-[12px]'>{buttonTitle}</Link>
             </div>
             <div className="flex items-center lg:px-3 gap-1 lg:gap-3 w-full">
                 {/* back button */}

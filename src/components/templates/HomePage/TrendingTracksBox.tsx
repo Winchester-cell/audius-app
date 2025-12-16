@@ -13,7 +13,7 @@ const TrendingTracksBox = () => {
 
     return (
         <div className={`${isInview ? 'opacity-100' : 'opacity-0'} duration-500 transition-opacity`} ref={elemRef}>
-            <CardBox sectionTitle='Trending Tracks' buttonTitle='View all' icon={IoMdMusicalNote} >
+            <CardBox allHref='/tracks' sectionTitle='Trending Tracks' buttonTitle='View all' icon={IoMdMusicalNote} >
                 {
                     isPending &&
                     <div className='flex w-full justify-center items-center h-[150px]'>
