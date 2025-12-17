@@ -1,40 +1,48 @@
+import useIsSaved from "@/hooks/useIsSaved"
 import useMusicImage from "@/hooks/useMusicImage"
+import usePlayAction from "@/hooks/usePlayAction"
 import { useAudioStore } from "@/stores/audioStore"
+import { SavedTrackPayload } from "@/types/saved-list.type"
 import { Track } from "@/types/tracks.type"
+import { removeSavedTrackHandler, saveTrackHandler } from "@/utils/actions"
 import Link from "next/link"
 import { FC, memo } from "react"
-import { AiOutlineUser } from "react-icons/ai"
+import { AiFillHeart, AiOutlineUser } from "react-icons/ai"
 import { CiHeart, CiPlay1 } from "react-icons/ci"
 
 
 
 const TrackCard: FC<Track> = (props) => {
 
-    const { id, title, user, artwork } = props
+    const { id, title, user, artwork, genre } = props
+
+    const { isSaved, setIsSaved } = useIsSaved(id, 'track')
+
     const artWorkImage = useMusicImage({ baseImage: artwork && artwork["150x150"], imageSize: '150x150' })
     const userProfileImage = useMusicImage({ baseImage: user.profile_picture && user.profile_picture["150x150"], imageSize: '150x150' })
 
-    const setTrack = useAudioStore(state => state.setTrack)
-    const setStreamUrl = useAudioStore(state => state.setStreamUrl)
-    const setPlaying = useAudioStore(state => state.setPlaying)
-    const setPlayerVisible = useAudioStore(state => state.setPlayerVisible)
+    const {playAction} = usePlayAction(props , id)
 
-    const playHandler = () => {
-        setPlayerVisible(true)
-        setStreamUrl(`api/tracks/${id}/stream`)
-        setTrack({ ...props })
-        setPlaying(true)
-    }
+    const payloadFormat: SavedTrackPayload = { trackID: id, uploaderName: user.name, image: artWorkImage, trackTitle: title }
 
     return (
         <div className="select-none w-[150px] h-[250px] lg:w-[200px] lg:h-[300px] rounded-2xl flex flex-col hover:scale-[1.03] transition-transform duration-500">
             <div className="size-[150px] lg:size-[200px] rounded-t-2xl relative overflow-hidden">
                 <div className="absolute bottom-0 z-30 w-full p-2 flex items-center gap-2">
-                    <div className="w-fit p-1.5 cursor-pointer bg-[#00000041] rounded-full border-2 border-[#ffffff2e] backdrop-blur-[5px] text-white">
-                        <CiHeart className="size-3 lg:size-4" />
-                    </div>
-                    <div onClick={playHandler} className="w-fit p-1.5 cursor-pointer bg-[#00000041] rounded-full border-2 border-[#ffffff2e] backdrop-blur-[5px] text-white">
+                    {isSaved ? (
+                        <div onClick={() => removeSavedTrackHandler(payloadFormat, setIsSaved)} className="w-fit p-1.5 cursor-pointer bg-[#00000041] rounded-full border-2 border-[#ffffff2e] backdrop-blur-[5px] text-white">
+                            <AiFillHeart className="size-3 lg:size-4 text-rose-500" />
+                        </div>
+                    ) : (
+                        <div onClick={() => saveTrackHandler(payloadFormat, setIsSaved)} className="w-fit p-1.5 cursor-pointer bg-[#00000041] rounded-full border-2 border-[#ffffff2e] backdrop-blur-[5px] text-white">
+                            <CiHeart className="size-3 lg:size-4" />
+                        </div>
+                    )}
+                    <div onClick={playAction} className="w-fit p-1.5 cursor-pointer bg-[#00000041] rounded-full border-2 border-[#ffffff2e] backdrop-blur-[5px] text-white">
                         <CiPlay1 className="size-3 lg:size-4" />
+                    </div>
+                    <div className="w-fit px-5 py-1.5 cursor-pointer bg-[#00000041] rounded-full border-2 border-[#ffffff2e] backdrop-blur-[5px] text-white">
+                        <div className="size-full line-clamp-1">{genre}</div>
                     </div>
                 </div>
                 <div className="w-full h-full img_shadow rounded-t-2xl absolute z-20"></div>

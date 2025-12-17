@@ -22,10 +22,10 @@ const Clock: React.FC = () => {
     const weekday = weekdayFormatter.format(now)
 
     return (
-        <div className={`flex ${isSideBarCollapse ? 'flex-col rounded-2xl text-[8px] py-5 items-start px-4 gap-3' : 'flex-row rounded-full text-[8px] py-3 items-center px-5 justify-between'}  neu__inner`}>
+        <div className={`flex ${isSideBarCollapse ? 'flex-col rounded-2xl text-[8px] py-5 items-start px-4 gap-2' : 'flex-row rounded-full text-[8px] py-3 items-center px-5 justify-between'}  neu__inner`}>
             <div className="font-bold">{time}</div>
             <div className="text-(--alt-text)">{weekday}</div>
-            <div className="text-(--alt-text)">{date}</div>
+            <div className={`text-(--alt-text) ${isSideBarCollapse ? 'hidden' : ''}`}>{date}</div>
         </div>
     )
 

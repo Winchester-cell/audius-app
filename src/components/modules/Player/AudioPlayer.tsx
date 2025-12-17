@@ -10,7 +10,10 @@ import Options from "./AudioComponents/Options"
 const AudioPlayer = ({ openClass }: any) => {
 
   const { track, streamUrl, playerVisible } = useAudioStore()
-  const imageUrl = useMusicImage({ baseImage: track && track.artwork["150x150"], imageSize: '150x150' })
+  const imageUrl = useMusicImage({
+    baseImage: track?.artwork["150x150"] ?? null,
+    imageSize: '150x150'
+  })
   const audioRef = useRef<HTMLAudioElement>(null)
   const progressRef = useRef<HTMLDivElement>(null)
   const progressMobileRef = useRef<HTMLDivElement>(null)

@@ -1,8 +1,9 @@
+import { userModel } from "@/models/user"
+import dbConnect from "@/utils/database/dbConnect"
 import NextAuth, { AuthOptions } from "next-auth"
 import Google from "next-auth/providers/google"
-import { randomUUID } from "crypto"
 
-const authOptions: AuthOptions = {
+export const authOptions: AuthOptions = {
     providers: [
         Google({
             clientId: process.env.GOOGLE_CLIENT_ID as string,
@@ -20,7 +21,17 @@ const authOptions: AuthOptions = {
         strategy: 'jwt'
     },
     callbacks: {
-        async jwt({ token, profile ,account }) {
+        async signIn({ account, profile }) {
+            if (account?.provider === 'google') {
+                await dbConnect()
+                const isUserExist = await userModel.findOne({ userID: profile?.sub })
+                if (!isUserExist) {
+                    await userModel.create({ name: profile?.name, email: profile?.email, accountType: 'google', userID: profile?.sub })
+                }
+            }
+            return true
+        },
+        async jwt({ token, profile, account }) {
             if (profile && account) {
                 token.id = profile.sub
             }

@@ -53,7 +53,7 @@ const sideBarContent: Fields[] = [
             },
             {
                 type: "single-item",
-                href: "#",
+                href: "/saved",
                 text: "Saved",
                 icon: HiBookmark,
             },

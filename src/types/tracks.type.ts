@@ -1,12 +1,12 @@
 export interface Track {
-    id: string;
+    id: string | number;
     title: string;
     duration: number;
     genre: string;
     artwork: {
-        "150x150": string;
-        "480x480": string;
-        "1000x1000": string;
+        "150x150": string | null;
+        "480x480": string | null;
+        "1000x1000": string | null;
     }
     user: {
         id: string;

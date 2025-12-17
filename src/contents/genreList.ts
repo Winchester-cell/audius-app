@@ -6,9 +6,12 @@ export const genresList = [
     'Ambient',
     'Hip-Hop/Rap',
     'Jazz',
+    'Trap',
+    'Metal',
     'Electronic',
     'Techno',
     'Trap',
     'Classical',
     'Dubstep',
+    'R&B/Soul',
 ]
