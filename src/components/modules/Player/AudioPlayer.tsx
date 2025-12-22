@@ -1,15 +1,17 @@
 'use client'
 import useMusicImage from "@/hooks/useMusicImage"
 import usePlayerHandlers from "@/hooks/usePlayerHandlers"
-import { useAudioStore } from "@/stores/audioStore"
 import { memo, useRef } from "react"
 import TrackInfo from "./AudioComponents/TrackInfo"
 import Controls from "./AudioComponents/Controls"
 import Options from "./AudioComponents/Options"
+import { usePlayerVisible, useStreamUrl, useTrack } from "@/stores/audioStore"
 
 const AudioPlayer = ({ openClass }: any) => {
 
-  const { track, streamUrl, playerVisible } = useAudioStore()
+  const track = useTrack()
+  const streamUrl = useStreamUrl()
+  const playerVisible = usePlayerVisible()
   const imageUrl = useMusicImage({
     baseImage: track?.artwork["150x150"] ?? null,
     imageSize: '150x150'
@@ -35,7 +37,7 @@ const AudioPlayer = ({ openClass }: any) => {
           <Controls audioRef={audioRef} progressRef={progressRef} seekHandler={seekHandler} progressPercent={progressPercent} />
         </div>
         {/* options */}
-        <Options exitHandler={exitHandler} currentTrackMinutes={currentTrackMinutes} currentTrackSecond={currentTrackSecond} trackMinutes={trackMinutes} trackSecond={trackSecond} />
+        <Options imageUrl={imageUrl} exitHandler={exitHandler} currentTrackMinutes={currentTrackMinutes} currentTrackSecond={currentTrackSecond} trackMinutes={trackMinutes} trackSecond={trackSecond} />
         {/* progressbar mobile */}
         <div onClick={seekHandlerMobile} ref={progressMobileRef} className="col-span-2 cursor-pointer flex lg:hidden w-full h-2 px-1 items-center mt-2 rounded-full bg-(--bars-color)">
           <div style={{ width: `${progressPercent}%` }} className="h-[3px] bg-(--colored-text) rounded-full"></div>

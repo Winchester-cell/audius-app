@@ -1,4 +1,4 @@
-import { useAudioStore } from "@/stores/audioStore"
+import { useAudioActions, useIsPlaying, useStreamUrl, useTrack } from "@/stores/audioStore"
 import { RefObject, useEffect, useState } from "react"
 
 interface UsePlayerHandlersProps {
@@ -9,7 +9,10 @@ interface UsePlayerHandlersProps {
 
 const usePlayerHandlers = ({ audioRef, progressRef, progressMobileRef }: UsePlayerHandlersProps) => {
 
-    const { isPlaying, track, streamUrl, setPlaying, setPlayerVisible } = useAudioStore()
+    const track = useTrack()
+    const streamUrl = useStreamUrl()
+    const isPlaying = useIsPlaying()
+    const {setPlayerVisible , setPlaying } = useAudioActions()
 
     const [progressPercent, setProgressPercent] = useState<number | null>(null)
     const [trackMinutes, setTrackMinutes] = useState<number | null>(null)

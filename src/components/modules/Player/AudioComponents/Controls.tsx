@@ -1,4 +1,4 @@
-import { useAudioStore } from "@/stores/audioStore"
+import { useAudioActions, useIsPlaying } from "@/stores/audioStore"
 import React, { RefObject } from "react"
 import { FaBackward, FaForward, FaPause, FaPlay } from "react-icons/fa"
 
@@ -11,7 +11,8 @@ interface ControlsProps {
 
 const Controls = ({ audioRef, progressRef, seekHandler, progressPercent }: ControlsProps) => {
 
-    const { isPlaying, setPlaying } = useAudioStore()
+    const isPlaying = useIsPlaying() 
+    const {setPlaying} = useAudioActions()
 
     return (
         <div className="h-full w-full flex flex-col justify-center items-center lg:mt-1">

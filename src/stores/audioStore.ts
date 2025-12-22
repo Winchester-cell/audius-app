@@ -3,22 +3,32 @@ import { create } from "zustand";
 
 interface AudioStore {
     streamUrl: string,
-    setStreamUrl: (value: string) => void
     isPlaying: boolean,
-    setPlaying: (value: boolean) => void
     track: Track | null,
-    setTrack: (value: Track) => void,
     playerVisible: boolean,
-    setPlayerVisible: (value: boolean) => void,
+    actions: {
+        setStreamUrl: (value: string) => void
+        setPlaying: (value: boolean) => void
+        setTrack: (value: Track) => void,
+        setPlayerVisible: (value: boolean) => void,
+    }
 }
 
-export const useAudioStore = create<AudioStore>((set) => ({
+const useAudioStore = create<AudioStore>((set) => ({
     streamUrl: '',
-    setStreamUrl: (newUrl) => set(() => ({ streamUrl: newUrl })),
     isPlaying: false,
-    setPlaying: (newValue) => set(() => ({ isPlaying: newValue })),
     track: null,
-    setTrack: (newTrack) => set(() => ({ track: newTrack })),
     playerVisible: false,
-    setPlayerVisible: (newValue) => set(() => ({ playerVisible: newValue }))
+    actions: {
+        setStreamUrl: (newUrl) => set(() => ({ streamUrl: newUrl })),
+        setPlaying: (newValue) => set(() => ({ isPlaying: newValue })),
+        setTrack: (newTrack) => set(() => ({ track: newTrack })),
+        setPlayerVisible: (newValue) => set(() => ({ playerVisible: newValue }))
+    },
 }))
+
+export const useStreamUrl = () => useAudioStore((state) => state.streamUrl)
+export const useIsPlaying = () => useAudioStore((state) => state.isPlaying)
+export const useTrack = () => useAudioStore((state) => state.track)
+export const usePlayerVisible = () => useAudioStore((state) => state.playerVisible)
+export const useAudioActions = () => useAudioStore((state) => state.actions)

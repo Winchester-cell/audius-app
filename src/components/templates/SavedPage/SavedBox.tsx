@@ -1,17 +1,17 @@
 'use client'
-import Link from 'next/link'
+import PaginationControls from '@/components/modules/Controls/PaginationControls'
+import { PaginationProps } from '@/types/pagination-prop.type'
 import React, { FC, ReactNode } from 'react'
 import SimpleBar from 'simplebar-react'
 
 interface SavedBoxProps {
     sectionTitle: string,
-    buttonTitle: string,
-    allHref?: string,
     icon?: React.ElementType,
     children?: ReactNode
+    paginationProps:PaginationProps
 }
 
-const SavedBox: FC<SavedBoxProps> = ({ sectionTitle, buttonTitle, icon: Icon, allHref, children }) => {
+const SavedBox: FC<SavedBoxProps> = ({ sectionTitle, icon: Icon, children , paginationProps }) => {
     return (
         <div className='select-none px-1 py-3 lg:p-5 neu__norm rounded-3xl overflow-hidden w-full'>
             <div className='flex items-center justify-between px-3 lg:px-5'>
@@ -19,7 +19,7 @@ const SavedBox: FC<SavedBoxProps> = ({ sectionTitle, buttonTitle, icon: Icon, al
                     {Icon && <Icon className={`size-5 lg:size-8 mt-0.5`} />}
                     {sectionTitle}
                 </h2>
-                <Link href={allHref ? allHref : '#'} className='text-(--alt-text) neu__norm rounded-full py-2 lg:py-3 px-5 lg:px-7 text-[10px] lg:text-[12px]'>{buttonTitle}</Link>
+                <PaginationControls {...paginationProps} />
             </div>
             <div className="flex items-center lg:px-3 gap-1 lg:gap-3 w-full">
                 {/* card container */}

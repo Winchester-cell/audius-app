@@ -1,7 +1,6 @@
 import useIsSaved from "@/hooks/useIsSaved"
 import useMusicImage from "@/hooks/useMusicImage"
 import usePlayAction from "@/hooks/usePlayAction"
-import { useAudioStore } from "@/stores/audioStore"
 import { SavedTrackPayload } from "@/types/saved-list.type"
 import { Track } from "@/types/tracks.type"
 import { removeSavedTrackHandler, saveTrackHandler } from "@/utils/actions"
@@ -42,16 +41,16 @@ const TrackCard: FC<Track> = (props) => {
                         <CiPlay1 className="size-3 lg:size-4" />
                     </div>
                     <div className="w-fit px-5 py-1.5 cursor-pointer bg-[#00000041] rounded-full border-2 border-[#ffffff2e] backdrop-blur-[5px] text-white">
-                        <div className="size-full line-clamp-1">{genre}</div>
+                        <Link href={`/tracks?genre=${genre}`} className="size-full line-clamp-1">{genre}</Link>
                     </div>
                 </div>
                 <div className="w-full h-full img_shadow rounded-t-2xl absolute z-20"></div>
                 {artWorkImage && <img loading="lazy" className="size-full object-cover shadow-inner absolute z-10" src={artWorkImage} alt="" />}
             </div>
             <div className="neu__norm rounded-b-2xl p-3">
-                <div className="block neu__norm p-3 rounded-xl h-[60px]">
+                <Link href={`/tracks/${id}`} className="block neu__norm p-3 rounded-xl h-[60px] transition-[color,background-color] duration-500 hover:text-white hover:bg-(--hover-color)">
                     <span className="font-semibold text-[10px] lg:text-[12px] line-clamp-2 w-full">{title}</span>
-                </div>
+                </Link>
                 <div className="flex items-center gap-2 py-2 neu__norm mt-3 px-3 rounded-full">
                     {userProfileImage && <img className="w-5 h-5 rounded-full" src={userProfileImage} alt="" />}
                     {!userProfileImage && <AiOutlineUser className="size-4" />}

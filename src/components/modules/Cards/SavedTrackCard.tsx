@@ -1,22 +1,21 @@
 import useIsSaved from "@/hooks/useIsSaved"
 import usePlayAction from "@/hooks/usePlayAction"
 import { SavedTrackPayload } from "@/types/saved-list.type"
-import { Track } from "@/types/tracks.type"
 import { removeSavedTrackHandler, saveTrackHandler } from "@/utils/actions"
 import { toTrackFormat } from "@/utils/formatters/toTrackFormat"
+import Link from "next/link"
 import { FC } from "react"
 import { AiFillHeart } from "react-icons/ai"
 import { CiHeart, CiPlay1 } from "react-icons/ci"
+import { FaDownload } from "react-icons/fa"
 
 const SavedTrackCard: FC<SavedTrackPayload> = (props) => {
 
     const { image, trackID, trackTitle, uploaderName } = props
 
     const { isSaved, setIsSaved } = useIsSaved(trackID, 'track')
-    const payloadFormat: SavedTrackPayload = { trackID, uploaderName, image, trackTitle }
-    const trackFormat = toTrackFormat(payloadFormat)
-
-    const {playAction} = usePlayAction(trackFormat , trackID)
+    const trackFormat = toTrackFormat(props)
+    const { playAction } = usePlayAction(trackFormat, trackID)
 
     return (
         <div className="w-full neu__norm rounded-3xl h-[90px] gap-3 flex px-10 py-3 items-center justify-between">
@@ -27,13 +26,23 @@ const SavedTrackCard: FC<SavedTrackPayload> = (props) => {
                     <div className="text-(--alt-text) text-[12px] line-clamp-1">{uploaderName}</div>
                 </div>
             </div>
-            <div className="flex gap-5 items-center">
-                <CiPlay1 onClick={playAction} className="size-6 cursor-pointer" />
+            <div className="flex gap-3 items-center">
+                <Link href={'#'} className="neu__norm py-2 px-5 block rounded-xl">View</Link>
+                <button className="neu__norm flex items-center justify-center size-10 rounded-full">
+                    <CiPlay1 onClick={playAction} className="size-5 cursor-pointer" />
+                </button>
                 {isSaved ? (
-                    <AiFillHeart onClick={() => removeSavedTrackHandler(payloadFormat, setIsSaved)} className="size-4 lg:size-6 text-rose-500 cursor-pointer" />
+                    <button onClick={() => removeSavedTrackHandler(props, setIsSaved)} className="neu__norm flex items-center justify-center size-10 rounded-full">
+                        <AiFillHeart className="size-4 lg:size-5 text-pink-500" />
+                    </button>
                 ) : (
-                    <CiHeart onClick={() => saveTrackHandler(payloadFormat, setIsSaved)} className="size-3 lg:size-6 cursor-pointer" />
+                    <button onClick={() => saveTrackHandler(props, setIsSaved)} className="neu__norm flex items-center justify-center size-10 rounded-full">
+                        <CiHeart className="size-3 lg:size-5" />
+                    </button>
                 )}
+                <Link className="neu__norm flex items-center justify-center size-10 rounded-full" target="_blank" href={`api/tracks/${trackID}/stream`}>
+                    <FaDownload className="lg:size-4" />
+                </Link>
             </div>
         </div>
     )

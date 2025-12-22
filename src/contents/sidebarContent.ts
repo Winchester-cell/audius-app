@@ -57,12 +57,13 @@ const sideBarContent: Fields[] = [
                 text: "Saved",
                 icon: HiBookmark,
             },
-            {
-                type: "single-item",
-                href: "#",
-                text: "History",
-                icon: AiOutlineHistory,
-            },
+            // for future :))
+            // {
+            //     type: "single-item",
+            //     href: "#",
+            //     text: "History",
+            //     icon: AiOutlineHistory,
+            // },
         ],
     },
 ];
