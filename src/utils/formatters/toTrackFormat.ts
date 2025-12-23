@@ -11,6 +11,8 @@ export const toTrackFormat = (saved: SavedTrackPayload): Track => ({
     "480x480": saved.image,
     "1000x1000": saved.image
   },
+  mood:"",
+  description:"",
   user: {
     id: "", 
     handle: "", 
