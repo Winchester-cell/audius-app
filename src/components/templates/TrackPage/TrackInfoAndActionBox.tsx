@@ -26,10 +26,16 @@ const TrackInfoAndActionBox = (props: Track) => {
     return (
         <>
             <div className="lg:h-[300px] flex flex-col lg:flex-row items-center neu__norm rounded-2xl overflow-hidden">
-                {artworkUrl && <img src={artworkUrl} className="size-full lg:w-auto" />}
-                <div className="h-full w-full flex flex-col gap-3 p-5">
+                {
+                    artworkUrl &&
+                    <div className={`relative flex justify-center w-full lg:w-[300px] h-[200px] lg:h-[300px] bg-red-100`}>
+                        <div style={{backgroundImage:`url('${artworkUrl}')`}} className="absolute lg:hidden size-full top-0 left-0 blur-md"></div>
+                        <img src={artworkUrl} className="size-[200px] lg:size-full absolute" />
+                    </div>
+                }
+                <div className="h-full w-full lg:w-[calc(100%-300px)] flex flex-col gap-3 p-3 lg:p-5">
                     <h2 className="text-lg lg:text-2xl font-semibold line-clamp-1">{title}</h2>
-                    <div className="flex items-center justify-between rounded-2xl grow w-full">
+                    <div className="flex items-center justify-between gap-3 rounded-2xl grow w-full">
                         {/* info section */}
                         <div className="w-1/2 flex flex-col gap-3 neu__inner h-full p-4 rounded-2xl">
                             <div className="flex items-center neu__norm w-fit ps-1 pe-5 py-1 rounded-full">
@@ -57,9 +63,9 @@ const TrackInfoAndActionBox = (props: Track) => {
             </div>
             {
                 description ? (
-                    <div className="grow text-lg text-(--alt-text) neu__norm rounded-2xl p-5"><span className="font-semibold">Description: </span> <p className="size-full line-clamp-6">{description}</p></div>
+                    <div className="h-[250px] text-lg text-(--alt-text) neu__norm rounded-2xl p-5"><div className="font-semibold">Description: </div> <p className="line-clamp-6">{description}</p></div>
                 ) : (
-                    <div className="w-full grow text-(--alt-text) neu__norm rounded-2xl flex items-center justify-center gap-2 text-lg"><BsFillClipboardXFill className="size-7 mb-2"/>No description Written</div>
+                    <div className="h-[250px] w-full grow text-(--alt-text) neu__norm rounded-2xl flex items-center justify-center gap-2 text-lg"><BsFillClipboardXFill className="size-7 mb-2" />No description Written</div>
                 )
             }
         </>

@@ -9,7 +9,7 @@ const TrackPage = () => {
     const { data } = useTrackQuery(trackID as string)
 
     return (
-        <div className="flex flex-col gap-5 h-[calc(100dvh-120px)]">
+        <div className="flex flex-col gap-5">
             {data && <TrackInfoAndActionBox {...data.data} />}
         </div>
     )
