@@ -3,6 +3,8 @@ export interface Track {
     title: string;
     duration: number;
     genre: string;
+    description: string;
+    mood:string;
     artwork: {
         "150x150": string | null;
         "480x480": string | null;

@@ -1,5 +1,5 @@
 'use client'
-import useSavedTracks from '@/hooks/queryHooks/useSavedTracks'
+import useSavedTracksQuery from '@/hooks/queryHooks/useSavedTracksQuery'
 import SavedBox from './SavedBox'
 import SavedTrackCard from '@/components/modules/Cards/SavedTrackCard'
 import usePagination from '@/hooks/usePagination'
@@ -7,7 +7,7 @@ import { SavedTrackPayload } from '@/types/saved-list.type'
 
 const SavedTracks = () => {
 
-    const { data } = useSavedTracks()
+    const { data } = useSavedTracksQuery()
     const paginationProps = usePagination<SavedTrackPayload>(data, 4)
 
     return (

@@ -1,11 +1,11 @@
 import TrackCard from "@/components/modules/Cards/TrackCard"
 import SpinnerLoading from "@/components/modules/Loadings/SpinnerLoading"
-import useTracks from "@/hooks/queryHooks/useTracks"
+import useTracksQuery from "@/hooks/queryHooks/useTracksQuery"
 import useScrollPagination from "@/hooks/useScrollPagination"
 import { Track } from "@/types/tracks.type"
 import { getEndPoint } from "@/utils/formatters/getEndpoint"
 import { useSearchParams } from "next/navigation"
-import { Dispatch, FC, SetStateAction, useEffect, useState } from "react"
+import { Dispatch, FC, SetStateAction} from "react"
 
 interface TracksPageTracksContainerProps {
     tracks: Track[],
@@ -19,7 +19,7 @@ const TracksPageTracksContainer: FC<TracksPageTracksContainerProps> = ({ tracks,
     const queryInfo = getEndPoint(filterValue)
     const { isPending } = useScrollPagination<Track>({
         setData: setTracks,
-        fetchHook: (page) => useTracks((queryInfo?.endpoint) as ('trending' | 'search'), `limit=50&offset=${(page - 1) * 50}${genre ? '&genre=' + genre : ''}${queryInfo?.searchparams ? `&${queryInfo.searchparams}` : ''}`, true)
+        fetchHook: (page) => useTracksQuery((queryInfo?.endpoint) as ('trending' | 'search'), `limit=50&offset=${(page - 1) * 50}${genre ? '&genre=' + genre : ''}${queryInfo?.searchparams ? `&${queryInfo.searchparams}` : ''}`, true)
     })
 
     return (

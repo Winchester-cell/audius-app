@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
 
-const usePlaylistTracks = (playlistID: any) => {
+const usePlaylistTracksQuery = (playlistID: any) => {
 
     const getPlaylistTracks = async () => {
 
@@ -23,4 +23,4 @@ const usePlaylistTracks = (playlistID: any) => {
 
 }
 
-export default usePlaylistTracks
+export default usePlaylistTracksQuery

@@ -1,5 +1,5 @@
 'use client'
-import useSavedPlaylists from '@/hooks/queryHooks/useSavedPlaylists'
+import useSavedPlaylistsQuery from '@/hooks/queryHooks/useSavedPlaylistsQuery'
 import usePagination from '@/hooks/usePagination'
 import SavedBox from './SavedBox'
 import SavedPlayListCard from '@/components/modules/Cards/SavedPlayListCard'
@@ -7,7 +7,7 @@ import { SavedPlaylistPayload } from '@/types/saved-list.type'
 
 const SavedPlaylists = () => {
 
-    const { data } = useSavedPlaylists()
+    const { data } = useSavedPlaylistsQuery()
     const paginationProps = usePagination<SavedPlaylistPayload>(data, 4)
 
     return (

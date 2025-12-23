@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
-import useSavedPlaylists from "./queryHooks/useSavedPlaylists"
-import useSavedTracks from "./queryHooks/useSavedTracks"
+import useSavedPlaylistsQuery from "./queryHooks/useSavedPlaylistsQuery"
+import useSavedTracksQuery from "./queryHooks/useSavedTracksQuery"
 
 const useIsSaved = (targetID: string | number, targetType: 'playlist' | 'track') => {
 
     const [isSaved, setIsSaved] = useState(false)
 
-    const { data: savedPlaylistsData } = useSavedPlaylists()
-    const { data: savedTacksData } = useSavedTracks()
+    const { data: savedPlaylistsData } = useSavedPlaylistsQuery()
+    const { data: savedTacksData } = useSavedTracksQuery()
 
     useEffect(() => {
 

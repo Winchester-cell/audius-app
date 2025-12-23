@@ -1,7 +1,7 @@
 import CardBox from '@/components/modules/Cards/CardBox'
 import PlaylistCard from '@/components/modules/Cards/PlaylistCard'
 import SpinnerLoading from '@/components/modules/Loadings/SpinnerLoading'
-import usePlaylists from '@/hooks/queryHooks/usePlaylists'
+import usePlaylistsQuery from '@/hooks/queryHooks/usePlaylistsQuery'
 import useInView from '@/hooks/useInView'
 import { CgPlayList } from 'react-icons/cg'
 import { FaSadTear } from 'react-icons/fa'
@@ -9,7 +9,7 @@ import { FaSadTear } from 'react-icons/fa'
 const RecentPlaylistBox = () => {
 
     const { elemRef, isInview } = useInView()
-    const { data, isError, isPending, refetch } = usePlaylists('search', 'limit=20&sort_method=recent', isInview)
+    const { data, isError, isPending, refetch } = usePlaylistsQuery('search', 'limit=20&sort_method=recent', isInview)
 
     return (
         <div className={`${isInview ? 'opacity-100' : 'opacity-0'} duration-500 transition-opacity`} ref={elemRef}>

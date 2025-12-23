@@ -27,7 +27,7 @@ const SavedTrackCard: FC<SavedTrackPayload> = (props) => {
                 </div>
             </div>
             <div className="flex gap-3 items-center">
-                <Link href={'#'} className="neu__norm py-2 px-5 block rounded-xl">View</Link>
+                <Link href={`/tracks/${trackID}`} className="neu__norm py-2 px-5 block rounded-xl">View</Link>
                 <button className="neu__norm flex items-center justify-center size-10 rounded-full">
                     <CiPlay1 onClick={playAction} className="size-5 cursor-pointer" />
                 </button>

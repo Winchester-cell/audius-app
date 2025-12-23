@@ -1,10 +1,10 @@
 import PlaylistCard from "@/components/modules/Cards/PlaylistCard"
 import SpinnerLoading from "@/components/modules/Loadings/SpinnerLoading"
-import usePlaylists from "@/hooks/queryHooks/usePlaylists"
+import usePlaylistsQuery from "@/hooks/queryHooks/usePlaylistsQuery"
 import useScrollPagination from "@/hooks/useScrollPagination"
 import { Playlist } from "@/types/playlist.type"
 import { getEndPoint } from "@/utils/formatters/getEndpoint"
-import { Dispatch, FC, SetStateAction, useEffect, useState } from "react"
+import { Dispatch, FC, SetStateAction } from "react"
 
 interface PlaylistsContainerProps {
     playlists: Playlist[],
@@ -17,7 +17,7 @@ const PlaylistsPageContainer: FC<PlaylistsContainerProps> = ({ playlists, setPla
     const queryInfo = getEndPoint(filterValue)
     const {isPending} = useScrollPagination<Playlist>({
         setData:setPlaylists ,
-        fetchHook:(page) => usePlaylists((queryInfo?.endpoint) as ('trending' | 'search') , `limit=50&offset=${(page - 1) * 50}&${queryInfo?.searchparams}`, true)
+        fetchHook:(page) => usePlaylistsQuery((queryInfo?.endpoint) as ('trending' | 'search') , `limit=50&offset=${(page - 1) * 50}&${queryInfo?.searchparams}`, true)
     })
 
     return (

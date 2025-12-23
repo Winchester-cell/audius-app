@@ -1,15 +1,15 @@
-import { SavedTrackPayload } from "@/types/saved-list.type"
+import { SavedPlaylistPayload } from "@/types/saved-list.type"
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
 import { useSession } from "next-auth/react"
 
-const useSavedTracks = () => {
+const useSavedPlaylistsQuery = () => {
 
     const { status } = useSession()
 
-    const getSavedTracks = async () => {
+    const getSavedPlaylist = async () => {
         try {
-            const res = await axios.get(`/api/savedTracks`)
+            const res = await axios.get(`/api/savedPlaylists`)
             if (res.status === 200) {
                 return res.data
             }
@@ -18,11 +18,11 @@ const useSavedTracks = () => {
         }
     }
 
-    return useQuery<SavedTrackPayload[]>({
-        queryKey: ['saved-tracks'],
-        queryFn: getSavedTracks,
+    return useQuery<SavedPlaylistPayload[]>({
+        queryKey: ['saved-playlists'],
+        queryFn: getSavedPlaylist,
         enabled: status === 'authenticated'
     })
 }
 
-export default useSavedTracks
+export default useSavedPlaylistsQuery

@@ -1,9 +1,9 @@
 import { useAudioActions } from "@/stores/audioStore"
 import { Track } from "@/types/tracks.type"
 
-const usePlayAction = (track: Track, id: string | number) => {
+const usePlayAction = (track: Track | null, id: string | number) => {
 
-    const {setTrack , setPlayerVisible , setPlaying , setStreamUrl} = useAudioActions()
+    const { setTrack, setPlayerVisible, setPlaying, setStreamUrl } = useAudioActions()
 
     const playAction = () => {
         if (track) {

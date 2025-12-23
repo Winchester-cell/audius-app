@@ -1,7 +1,7 @@
 import CardBox from '@/components/modules/Cards/CardBox'
 import TrackCard from '@/components/modules/Cards/TrackCard'
 import SpinnerLoading from '@/components/modules/Loadings/SpinnerLoading'
-import useTracks from '@/hooks/queryHooks/useTracks'
+import useTracksQuery from '@/hooks/queryHooks/useTracksQuery'
 import useInView from '@/hooks/useInView'
 import { FaSadTear } from 'react-icons/fa'
 import { IoMdMusicalNote } from 'react-icons/io'
@@ -9,7 +9,7 @@ import { IoMdMusicalNote } from 'react-icons/io'
 const RecentTracksBox = () => {
 
     const { elemRef, isInview } = useInView()
-    const { data, isError, isPending, refetch } = useTracks('search', 'limit=20&sort_method=recent', isInview)
+    const { data, isError, isPending, refetch } = useTracksQuery('search', 'limit=20&sort_method=recent', isInview)
 
     return (
         <div className={`${isInview ? 'opacity-100' : 'opacity-0'} duration-500 transition-opacity`} ref={elemRef}>

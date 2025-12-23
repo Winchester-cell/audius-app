@@ -5,7 +5,7 @@ import TracksPageTracksContainer from "@/components/templates/TracksPage/TracksP
 import { tracksPageFilterOptions } from "@/contents/reactSelectOptions"
 import { Track } from "@/types/tracks.type"
 import { useSearchParams } from "next/navigation"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { FaSlidersH } from "react-icons/fa"
 import { IoMdMusicalNote } from "react-icons/io"
 

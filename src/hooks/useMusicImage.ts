@@ -1,5 +1,4 @@
 import { extractContentId } from "@/utils/formatters/extractContentID"
-import { FC } from "react"
 
 interface UseMusicImageProps {
     baseImage: (string | null),
