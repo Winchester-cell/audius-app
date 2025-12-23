@@ -8,7 +8,7 @@ const usePlayAction = (track: Track | null, id: string | number) => {
     const playAction = () => {
         if (track) {
             setPlayerVisible(true)
-            setStreamUrl(`api/tracks/${id}/stream`)
+            setStreamUrl(`/api/tracks/${id}/stream`)
             setTrack({ ...track })
             setPlaying(true)
         }
