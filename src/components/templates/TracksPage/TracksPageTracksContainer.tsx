@@ -16,10 +16,11 @@ interface TracksPageTracksContainerProps {
 const TracksPageTracksContainer: FC<TracksPageTracksContainerProps> = ({ tracks, setTracks, filterValue }) => {
 
     const genre = useSearchParams().get('genre')
+    const mood = useSearchParams().get('mood')
     const queryInfo = getEndPoint(filterValue)
     const { isPending } = useScrollPagination<Track>({
         setData: setTracks,
-        fetchHook: (page) => useTracksQuery((queryInfo?.endpoint) as ('trending' | 'search'), `limit=50&offset=${(page - 1) * 50}${genre ? '&genre=' + genre : ''}${queryInfo?.searchparams ? `&${queryInfo.searchparams}` : ''}`, true)
+        fetchHook: (page) => useTracksQuery((queryInfo?.endpoint) as ('trending' | 'search'), `limit=50&offset=${(page - 1) * 50}${genre ? '&genre=' + genre : ''}${mood ? '&mood=' + mood : ''}${queryInfo?.searchparams ? `&${queryInfo.searchparams}` : ''}`, true)
     })
 
     return (

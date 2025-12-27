@@ -18,7 +18,7 @@ const SavedTrackCard: FC<SavedTrackPayload> = (props) => {
     const { playAction } = usePlayAction(trackFormat, trackID)
 
     return (
-        <div className="w-full neu__norm rounded-3xl h-[90px] gap-3 flex px-10 py-3 items-center justify-between">
+        <div className="w-full neu__norm rounded-3xl h-[150px] lg:h-[90px] gap-3 flex lg:flex-row flex-col px-10 py-3 lg:items-center lg:justify-between">
             <div className="flex items-center gap-3 h-full">
                 <img loading="lazy" className="size-[67px] rounded-xl" src={image?.toString()} />
                 <div className="h-full pt-1">

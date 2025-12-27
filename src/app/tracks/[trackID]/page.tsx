@@ -1,4 +1,5 @@
 'use client'
+import SimilarTracks from "@/components/templates/TrackPage/SimilarTracks"
 import TrackInfoAndActionBox from "@/components/templates/TrackPage/TrackInfoAndActionBox"
 import useTrackQuery from "@/hooks/queryHooks/useTrackQuery"
 import { useParams } from "next/navigation"
@@ -10,7 +11,13 @@ const TrackPage = () => {
 
     return (
         <div className="flex flex-col gap-5">
-            {data && <TrackInfoAndActionBox {...data.data} />}
+            {
+                data &&
+                <>
+                    <TrackInfoAndActionBox {...data.data} />
+                    <SimilarTracks mood={data.data.mood} />
+                </>
+            }
         </div>
     )
 }
